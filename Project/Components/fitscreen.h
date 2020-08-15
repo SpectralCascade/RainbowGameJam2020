@@ -18,23 +18,11 @@ struct FitScreenSchema : public Schema<FitScreenSchema, 20>
 
 };
 
-
-class FitScreen : public
-#ifdef OSSIUM_EDITOR
-GraphicComponent
-#else
-Component
-#endif // OSSIUM_EDITOR
-, public FitScreenSchema
+class FitScreen : public GraphicComponent, public FitScreenSchema
 {
 public:
-#ifdef OSSIUM_EDITOR
     CONSTRUCT_SCHEMA(GraphicComponent, FitScreenSchema);
     DECLARE_COMPONENT(GraphicComponent, FitScreen);
-#else
-    CONSTRUCT_SCHEMA(Component, FitScreenSchema);
-    DECLARE_COMPONENT(Component, FitScreen);
-#endif // OSSIUM_EDITOR
 
     void OnLoadFinish();
 

@@ -16,21 +16,28 @@ void FitScreen::OnLoadFinish()
 
 void FitScreen::Render(Renderer& renderer)
 {
+    Vector2 screenDimensions = Vector2(renderer.GetViewportRect().w, renderer.GetViewportRect().h);
     if (dirty)
     {
         Transform* t = GetTransform();
-        Vector2 screenDimensions = Vector2(renderer.GetViewportRect().w, renderer.GetViewportRect().h);
 
-        t->SetLocalPosition((topLeftAnchor * screenDimensions) + (((bottomRightAnchor * screenDimensions) - (topLeftAnchor * screenDimensions)) * transformOrigin));
+        Vector2 bounds = (bottomRightAnchor * screenDimensions) - (topLeftAnchor * screenDimensions);
+        t->SetLocalPosition((topLeftAnchor * screenDimensions) + (bounds * transformOrigin));
+
+        auto texts = entity->GetComponents<Text>();
+        for (Text* text : texts)
+        {
+            text->layout.SetBounds(bounds - t->GetLocalPosition());
+        }
+        dirty = false;
     }
 #ifdef OSSIUM_EDITOR
     if (showDebug)
     {
-        Vector2 screenDimensions = Vector2(renderer.GetViewportRect().w, renderer.GetViewportRect().h);
         Vector2 pos = screenDimensions * topLeftAnchor;
-        Rect(pos.x, pos.y, 3, 3).DrawFilled(renderer, Colors::RED);
+        Rect(pos.x - 1, pos.y - 1, 3, 3).DrawFilled(renderer, Colors::RED);
         pos = screenDimensions * bottomRightAnchor;
-        Rect(pos.x, pos.y, 3, 3).DrawFilled(renderer, Colors::RED);
+        Rect(pos.x - 1, pos.y - 1, 3, 3).DrawFilled(renderer, Colors::RED);
         Rect(GetTransform()->GetWorldPosition().x, GetTransform()->GetWorldPosition().y, 3, 3).DrawFilled(renderer, Colors::CYAN);
     }
 #endif // OSSIUM_EDITOR

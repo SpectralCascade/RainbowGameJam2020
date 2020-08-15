@@ -1,15 +1,45 @@
 {
     "0" : {
         "Components" : {
-            "Text" : [{
-            "renderLayer" : 0,
-            "enabled" : 1
-        }],
             "Transform" : [{
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(0, 0)",
+            "position" : "(0, 18.82)",
+            "enabled" : 1
+        }],
+            "Text" : [{
+            "renderMode" : 0,
+            "font_guid" : "C:\Users\2013b\Git\RainbowGameJam2020\assets\Orkney Regular.ttf",
+            "enabled" : 1,
+            "text" : "Test text!",
+            "applyMarkup" : 1,
+            "layout" : {
+                "kerning" : 1,
+                "wordBreak" : 0,
+                "ignoreWhitespace" : 1,
+                "lineWrap" : 1,
+                "direction" : 0,
+                "pointSize" : 18,
+                "mainStyle" : 0,
+                "alignment" : 1,
+                "mainColor" : "(0, 0, 0, 255)"
+            },
+            "boxed" : 1,
+            "renderLayer" : 0,
+            "bounds" : "(0, 0)",
+            "boxPaddingWidth" : 4,
+            "hinting" : 0,
+            "boxPaddingHeight" : 2,
+            "backgroundColor" : "(100, 255, 255, 55)",
+            "outline" : 0
+        }],
+            "FitScreen" : [{
+            "transformOrigin" : "(0, 0.1)",
+            "bottomRightAnchor" : "(1, 0.2)",
+            "topLeftAnchor" : "(0, 0)",
+            "renderLayer" : 0,
+            "showDebug" : 1,
             "enabled" : 1
         }]
         },

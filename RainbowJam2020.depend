@@ -32,7 +32,7 @@
 	"schemamodel.h"
 	"stringconvert.h"
 
-1597445928 c:\users\2013b\git\ossium\engine\src\core\schemamodel.h
+1597509037 c:\users\2013b\git\ossium\engine\src\core\schemamodel.h
 	<SDL2/SDL.h>
 	<fstream>
 	<type_traits>
@@ -43,6 +43,7 @@
 	"jsondata.h"
 	"stringconvert.h"
 	"../Editor/Core/editorserializer.h"
+	"schematype.h"
 
 1596390932 c:\users\2013b\git\ossium\engine\src\core\stringintern.h
 	<cstdio>
@@ -83,8 +84,10 @@
 	<any>
 	"helpermacros.h"
 
-1597491423 c:\users\2013b\git\ossium\engine\src\editor\core\editorserializer.h
+1597510340 c:\users\2013b\git\ossium\engine\src\editor\core\editorserializer.h
 	"../../Core/stringconvert.h"
+	"../../Core/schematype.h"
+	"../../Core/jsondata.h"
 
 1582026264 c:\users\2013b\git\ossium\engine\src\core\init.h
 	"helpermacros.h"
@@ -156,7 +159,7 @@
 	<list>
 	<unordered_map>
 
-1597493771 c:\users\2013b\git\ossium\engine\src\components\text.h
+1597511651 c:\users\2013b\git\ossium\engine\src\components\text.h
 	<string>
 	"../Core/component.h"
 	"../Core/helpermacros.h"
@@ -467,7 +470,7 @@
 	<SDL2/SDL.h>
 	<string>
 
-1596914559 c:\users\2013b\git\ossium\engine\src\core\textlayout.h
+1597507599 c:\users\2013b\git\ossium\engine\src\core\textlayout.h
 	<stack>
 	"font.h"
 	"schemamodel.h"
@@ -876,9 +879,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1597494922 source:c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.cpp
+1597511129 source:c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.cpp
 	"fitscreen.h"
 
-1597494524 c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.h
+1597510834 c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.h
 	<Ossium.h>
+
+1597509020 c:\users\2013b\git\ossium\engine\src\core\schematype.h
 
