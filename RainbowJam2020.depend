@@ -64,7 +64,7 @@
 	<unordered_map>
 	"helpermacros.h"
 
-1596892280 c:\users\2013b\git\ossium\engine\src\core\typefactory.h
+1597517999 c:\users\2013b\git\ossium\engine\src\core\typefactory.h
 	<functional>
 	"logging.h"
 
@@ -159,20 +159,20 @@
 	<list>
 	<unordered_map>
 
-1597511651 c:\users\2013b\git\ossium\engine\src\components\text.h
+1597513606 c:\users\2013b\git\ossium\engine\src\components\text.h
 	<string>
 	"../Core/component.h"
 	"../Core/helpermacros.h"
 	"../Core/textlayout.h"
 
-1594579298 c:\users\2013b\git\ossium\engine\src\core\component.h
+1597515924 c:\users\2013b\git\ossium\engine\src\core\component.h
 	"transform.h"
 
 1597137178 c:\users\2013b\git\ossium\engine\src\core\transform.h
 	"coremaths.h"
 	"ecs.h"
 
-1597451186 c:\users\2013b\git\ossium\engine\src\core\ecs.h
+1597518458 c:\users\2013b\git\ossium\engine\src\core\ecs.h
 	<vector>
 	<string.h>
 	<unordered_map>
@@ -219,7 +219,7 @@
 1582026264 c:\users\2013b\git\ossium\engine\src\core\delta.h
 	"jsondata.h"
 
-1597152539 c:\users\2013b\git\ossium\engine\src\components\statesprite.h
+1597520350 c:\users\2013b\git\ossium\engine\src\components\statesprite.h
 	<map>
 	<utility>
 	<string>
@@ -261,7 +261,7 @@
 1582026264 c:\users\2013b\git\ossium\engine\src\core\curves.h
 	"helpermacros.h"
 
-1596304554 c:\users\2013b\git\ossium\engine\src\components\inputgui.h
+1597515905 c:\users\2013b\git\ossium\engine\src\components\inputgui.h
 	"../Core/input.h"
 	"../Core/keyboard.h"
 	"../Core/mouse.h"
@@ -879,7 +879,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1597511129 source:c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.cpp
+1597513600 source:c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.cpp
 	"fitscreen.h"
 
 1597510834 c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.h

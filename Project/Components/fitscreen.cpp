@@ -28,6 +28,7 @@ void FitScreen::Render(Renderer& renderer)
         for (Text* text : texts)
         {
             text->layout.SetBounds(bounds - t->GetLocalPosition());
+            text->dirty = true;
         }
         dirty = false;
     }
