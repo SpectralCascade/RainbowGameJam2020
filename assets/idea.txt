@@ -1,0 +1,10 @@
+
+
+RAINBOW GAME JAM 2020 - "STRENGTH IN NUMBERS"
+
+IDEA:
+
+    Top down game where you must gradually gather and guide a group of queer ghosts safely to the afterlife without being sucked up by the ghostbusters.
+    Ghostbusters can suck up individual ghosts if you're not careful, but if you get enough together, you can scare them off by all shouting 'Boo!' at once,
+    allowing safe passage.
+

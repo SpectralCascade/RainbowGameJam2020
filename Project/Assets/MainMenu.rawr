@@ -1,0 +1,20 @@
+{
+    "0" : {
+        "Components" : {
+            "Text" : [{
+            "renderLayer" : 0,
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(0, 0)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : -1,
+        "Active" : 1,
+        "Name" : "Title"
+    }
+}
