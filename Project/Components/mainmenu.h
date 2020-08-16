@@ -30,6 +30,12 @@ public:
     /// Quit the game.
     void Quit();
 
+private:
+    void CleanupHandles();
+
+    int playClickHandle = -1;
+    int quitClickHandle = -1;
+
 };
 
 #endif // MAINMENU_H

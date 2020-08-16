@@ -1,0 +1,77 @@
+{
+    "0" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(0, 0)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : -1,
+        "Active" : 1,
+        "Name" : "Root"
+    },
+    "1" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(0, 0)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 0,
+        "Active" : 1,
+        "Name" : "UI"
+    },
+    "2" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(10.87, 0)",
+            "enabled" : 1
+        }],
+            "FitScreen" : [{
+            "transformOrigin" : "(0.01, 0)",
+            "bottomRightAnchor" : "(1, 1)",
+            "topLeftAnchor" : "(0, 0)",
+            "renderLayer" : 0,
+            "showDebug" : 0,
+            "enabled" : 1
+        }],
+            "Text" : [{
+            "outline" : 0,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "renderMode" : 0,
+            "boxPaddingHeight" : 2,
+            "hinting" : 0,
+            "boxPaddingWidth" : 4,
+            "boxed" : 0,
+            "layout" : {
+                "kerning" : 1,
+                "wordBreak" : 0,
+                "ignoreWhitespace" : 1,
+                "lineWrap" : 1,
+                "direction" : 0,
+                "pointSize" : 72,
+                "mainStyle" : 0,
+                "alignment" : 0,
+                "mainColor" : "(0, 200, 0, 255)"
+            },
+            "applyMarkup" : 1,
+            "text" : "Ghosts: {0}",
+            "renderLayer" : 0,
+            "font_guid" : "assets/BubbleDub.ttf",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 1,
+        "Active" : 1,
+        "Name" : "GhostCount"
+    }
+}

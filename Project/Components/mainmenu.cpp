@@ -15,15 +15,13 @@ void MainMenu::OnLoadFinish()
     if (inputGUI != nullptr)
     {
         const char* context = SID("MainMenu")::str;
-        if (GetService<InputController>()->GetContext(context) == nullptr)
-        {
-            GetService<InputController>()->AddContext(context, inputGUI);
-        }
         inputGUI->RemoveAll();
         Image* buttonImage = GetService<ResourceController>()->Get<Image>("assets/menu_button.png", *GetService<Renderer>());
+        CleanupHandles();
         if (playButton != nullptr)
         {
             playButton->GetEntity()->AddComponentOnce<StateSprite>()->AddState("main", buttonImage, true, 3);
+            playClickHandle = playButton->OnClicked += [&] (const Button& caller) { GoPlay(); };
             inputGUI->AddInteractable(context, *playButton);
         }
         else
@@ -33,12 +31,25 @@ void MainMenu::OnLoadFinish()
         if (quitButton != nullptr)
         {
             quitButton->GetEntity()->AddComponentOnce<StateSprite>()->AddState("main", buttonImage, true, 3);
+            quitClickHandle = quitButton->OnClicked += [&] (const Button& caller) { Quit(); };
             inputGUI->AddInteractable(context, *quitButton);
         }
         else
         {
             Log.Error("Failed to locate quit button!");
         }
+    }
+}
+
+void MainMenu::CleanupHandles()
+{
+    if (playButton != nullptr && playClickHandle >= 0)
+    {
+        playButton->OnClicked -= playClickHandle;
+    }
+    if (quitButton != nullptr && quitClickHandle >= 0)
+    {
+        quitButton->OnClicked -= quitClickHandle;
     }
 }
 
