@@ -17,6 +17,11 @@ void FitScreen::OnLoadFinish()
 void FitScreen::Render(Renderer& renderer)
 {
     Vector2 screenDimensions = Vector2(renderer.GetViewportRect().w, renderer.GetViewportRect().h);
+    if (oldRenderDimensions != screenDimensions)
+    {
+        oldRenderDimensions = screenDimensions;
+        dirty = true;
+    }
     if (dirty)
     {
         Transform* t = GetTransform();

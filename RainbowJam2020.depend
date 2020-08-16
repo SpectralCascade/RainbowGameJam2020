@@ -71,7 +71,7 @@
 1596304022 c:\users\2013b\git\ossium\engine\src\core\logging.h
 	"stringconvert.h"
 
-1597420798 c:\users\2013b\git\ossium\engine\src\core\stringconvert.h
+1597578068 c:\users\2013b\git\ossium\engine\src\core\stringconvert.h
 	<utility>
 	<SDL2/SDL.h>
 	"typeinference.h"
@@ -185,7 +185,7 @@
 	"services.h"
 	"resourcecontroller.h"
 
-1597536951 c:\users\2013b\git\ossium\engine\src\core\tree.h
+1597577997 c:\users\2013b\git\ossium\engine\src\core\tree.h
 	<string>
 	<vector>
 	<queue>
@@ -219,7 +219,7 @@
 1582026264 c:\users\2013b\git\ossium\engine\src\core\delta.h
 	"jsondata.h"
 
-1597539579 c:\users\2013b\git\ossium\engine\src\components\statesprite.h
+1597573413 c:\users\2013b\git\ossium\engine\src\components\statesprite.h
 	<map>
 	<utility>
 	<string>
@@ -492,7 +492,7 @@
 	"../Core/editorgui.h"
 	"../../Core/tree.h"
 
-1597418039 c:\users\2013b\git\ossium\engine\src\editor\core\editorgui.h
+1597585115 c:\users\2013b\git\ossium\engine\src\editor\core\editorgui.h
 	<stack>
 	"../../Ossium.h"
 	"editorstyle.h"
@@ -879,10 +879,10 @@
 	"begin_code.h"
 	"close_code.h"
 
-1597521402 source:c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.cpp
+1597577743 source:c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.cpp
 	"fitscreen.h"
 
-1597510834 c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.h
+1597577727 c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.h
 	<Ossium.h>
 
 1597509020 c:\users\2013b\git\ossium\engine\src\core\schematype.h

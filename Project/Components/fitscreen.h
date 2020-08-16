@@ -31,6 +31,8 @@ public:
 private:
     bool dirty = true;
 
+    Vector2 oldRenderDimensions = Vector2::Zero;
+
 };
 
 #endif // FITSCREEN_H

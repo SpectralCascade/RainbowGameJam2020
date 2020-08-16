@@ -3,8 +3,25 @@
 RAINBOW GAME JAM 2020 - "STRENGTH IN NUMBERS"
 
 IDEA:
-
     Top down game where you must gradually gather and guide a group of queer ghosts safely to the afterlife without being sucked up by the ghostbusters.
     Ghostbusters can suck up individual ghosts if you're not careful, but if you get enough together, you can scare them off by all shouting 'Boo!' at once,
-    allowing safe passage.
+    allowing safe passage. As long as you can retrieve everyone and get to the exit in the time limit!
+    
+    This is basically a stealth game, but with a group of queer ghosts :P
 
+PLOT: Ghost friends have been captured by the ghostbusters! Go find them all and free them while scaring off baddies.
+
+GOAL: Reach the end of a level with all ghosts safely.
+
+MOVEMENT:
+- Single 'flock' of ghosts you can guide as one whole group, like a particle cloud
+
+RESOURCES:
+- As the flock moves around, it gathers any nearby ghosts. The more ghosts you have, the more powerful types of ghostbusters you can scare away
+- Pickup ectoplasm to enable special abilities such as phasing through walls for a limited time.
+
+ABILITIES:
+- Boo: Scare 'attack' that makes ghostbusters run away
+- WoooOOOooOOOooooo: Make a bunch of noise to distract ghostbusters.
+- Phase: Slip through regular walls/doors for a limited period of time. (Note, some 'anti-ghost' walls are not possible to phase through). Requires plasma
+- Woosh: Fast movement that lets you avoid repetative timed obstacles (like pacman hallways)

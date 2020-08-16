@@ -1,55 +1,188 @@
 {
-    "16" : {
-        "Components" : {
-            "FitScreen" : [{
-            "transformOrigin" : "(0.5, 0.35)",
-            "bottomRightAnchor" : "(1, 1)",
-            "topLeftAnchor" : "(0, 0)",
-            "renderLayer" : 0,
-            "showDebug" : 0,
-            "enabled" : 1
-        }],
-            "Transform" : [{
-            "relative" : 1,
-            "scale" : "(10, 10)",
-            "rotation" : 0,
-            "position" : "(544.5, 329.7)",
-            "enabled" : 1
-        }],
-            "Texture" : [{
-            "blending" : 1,
-            "modulation" : "(255, 255, 255, 255)",
-            "flip" : 0,
-            "imgPath" : "assets/gayghost.png",
-            "height" : 32,
-            "origin" : "(0.5, 0.35)",
-            "width" : 32,
-            "renderLayer" : 0,
-            "clip" : "(0, 0, 32, 32)",
-            "enabled" : 1
-        }]
-        },
-        "Parent" : 2,
-        "Active" : 1,
-        "Name" : "Ghost"
-    },
-    "8" : {
+    "9" : {
         "Components" : {
             "Transform" : [{
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(0, 47.1)",
+            "position" : "(557, 611.65)",
             "enabled" : 1
         }],
             "FitScreen" : [{
-            "transformOrigin" : "(0, 0.05)",
+            "transformOrigin" : "(0.5, 0.65)",
             "bottomRightAnchor" : "(1, 1)",
             "topLeftAnchor" : "(0, 0)",
             "renderLayer" : 0,
             "showDebug" : 0,
             "enabled" : 1
         }],
+            "StateSprite" : [{
+            "totalCurrentSegments" : 3,
+            "enabled" : 1,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 240, 80)",
+            "width" : 240,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/menu_button.png",
+            "height" : 80,
+            "flip" : 0,
+            "modulation" : "(40, 255, 255, 255)",
+            "blending" : 1,
+            "currentState" : "main",
+            "currentSubState" : 0,
+            "horizontalFlag" : 1
+        }],
+            "Button" : [{
+            "renderLayer" : 0,
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 2,
+        "Active" : 1,
+        "Name" : "Play"
+    },
+    "2" : {
+        "Components" : {
+            "MainMenu" : [{
+            "enabled" : 1
+        }],
+            "InputGUI" : [{
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(0, 0)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : -1,
+        "Active" : 1,
+        "Name" : "Root"
+    },
+    "15" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(-36, -24)",
+            "enabled" : 1
+        }],
+            "Text" : [{
+            "outline" : 0,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "renderMode" : 0,
+            "boxPaddingHeight" : 2,
+            "hinting" : 0,
+            "boxPaddingWidth" : 4,
+            "boxed" : 0,
+            "layout" : {
+                "kerning" : 1,
+                "wordBreak" : 0,
+                "ignoreWhitespace" : 1,
+                "lineWrap" : 1,
+                "direction" : 0,
+                "pointSize" : 50,
+                "mainStyle" : 0,
+                "alignment" : 0,
+                "mainColor" : "(0, 0, 0, 255)"
+            },
+            "applyMarkup" : 1,
+            "text" : "Quit",
+            "renderLayer" : 5,
+            "font_guid" : "assets/BubbleDub.ttf",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 14,
+        "Active" : 1,
+        "Name" : "Text"
+    },
+    "13" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(-42, -32)",
+            "enabled" : 1
+        }],
+            "Text" : [{
+            "outline" : 0,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "renderMode" : 0,
+            "boxPaddingHeight" : 2,
+            "hinting" : 0,
+            "boxPaddingWidth" : 4,
+            "boxed" : 0,
+            "layout" : {
+                "kerning" : 1,
+                "wordBreak" : 0,
+                "ignoreWhitespace" : 1,
+                "lineWrap" : 1,
+                "direction" : 0,
+                "pointSize" : 72,
+                "mainStyle" : 0,
+                "alignment" : 0,
+                "mainColor" : "(0, 0, 0, 255)"
+            },
+            "applyMarkup" : 1,
+            "text" : "Play",
+            "renderLayer" : 5,
+            "font_guid" : "assets/BubbleDub.ttf",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 9,
+        "Active" : 1,
+        "Name" : "Text"
+    },
+    "14" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(0.8, 0.8)",
+            "rotation" : 0,
+            "position" : "(557, 846.9)",
+            "enabled" : 1
+        }],
+            "FitScreen" : [{
+            "transformOrigin" : "(0.5, 0.9)",
+            "bottomRightAnchor" : "(1, 1)",
+            "topLeftAnchor" : "(0, 0)",
+            "renderLayer" : 0,
+            "showDebug" : 0,
+            "enabled" : 1
+        }],
+            "StateSprite" : [{
+            "totalCurrentSegments" : 3,
+            "enabled" : 1,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 240, 80)",
+            "width" : 240,
+            "origin" : "(0.5, 0.5)",
+            "imgPath" : "assets/menu_button.png",
+            "height" : 80,
+            "flip" : 0,
+            "modulation" : "(40, 255, 255, 255)",
+            "blending" : 1,
+            "currentState" : "main",
+            "currentSubState" : 0,
+            "horizontalFlag" : 1
+        }],
+            "Button" : [{
+            "renderLayer" : 0,
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 2,
+        "Active" : 1,
+        "Name" : "Quit"
+    },
+    "8" : {
+        "Components" : {
             "Text" : [{
             "outline" : 0,
             "backgroundColor" : "(0, 0, 0, 255)",
@@ -74,192 +207,59 @@
             "renderLayer" : 5,
             "font_guid" : "assets/BubbleDub.ttf",
             "enabled" : 1
+        }],
+            "FitScreen" : [{
+            "transformOrigin" : "(0, 0.05)",
+            "bottomRightAnchor" : "(1, 1)",
+            "topLeftAnchor" : "(0, 0)",
+            "renderLayer" : 0,
+            "showDebug" : 0,
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(0, 47.05)",
+            "enabled" : 1
         }]
         },
         "Parent" : 2,
         "Active" : 1,
         "Name" : "Title"
     },
-    "14" : {
+    "16" : {
         "Components" : {
-            "Button" : [{
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 0,
+            "imgPath" : "assets/gayghost.png",
+            "height" : 32,
+            "origin" : "(0.5, 0.35)",
+            "width" : 32,
             "renderLayer" : 0,
+            "clip" : "(0, 0, 32, 32)",
             "enabled" : 1
         }],
-            "StateSprite" : [{
-            "totalCurrentSegments" : 3,
-            "enabled" : 1,
-            "renderLayer" : 0,
-            "clip" : "(0, 0, 240, 80)",
-            "width" : 240,
-            "origin" : "(0.5, 0.5)",
-            "imgPath" : "assets/menu_button.png",
-            "height" : 80,
-            "flip" : 0,
-            "modulation" : "(40, 255, 255, 255)",
-            "blending" : 1,
-            "currentState" : "main",
-            "currentSubState" : 0,
-            "horizontalFlag" : 1
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(7, 7)",
+            "rotation" : 0,
+            "position" : "(557, 329.35)",
+            "enabled" : 1
         }],
             "FitScreen" : [{
-            "transformOrigin" : "(0.5, 0.9)",
+            "transformOrigin" : "(0.5, 0.35)",
             "bottomRightAnchor" : "(1, 1)",
             "topLeftAnchor" : "(0, 0)",
             "renderLayer" : 0,
             "showDebug" : 0,
             "enabled" : 1
-        }],
-            "Transform" : [{
-            "relative" : 1,
-            "scale" : "(0.8, 0.8)",
-            "rotation" : 0,
-            "position" : "(544.5, 847.8)",
-            "enabled" : 1
         }]
         },
         "Parent" : 2,
         "Active" : 1,
-        "Name" : "Quit"
-    },
-    "13" : {
-        "Components" : {
-            "Text" : [{
-            "outline" : 0,
-            "backgroundColor" : "(0, 0, 0, 255)",
-            "renderMode" : 0,
-            "boxPaddingHeight" : 2,
-            "hinting" : 0,
-            "boxPaddingWidth" : 4,
-            "boxed" : 0,
-            "layout" : {
-                "kerning" : 1,
-                "wordBreak" : 0,
-                "ignoreWhitespace" : 1,
-                "lineWrap" : 1,
-                "direction" : 0,
-                "pointSize" : 72,
-                "mainStyle" : 0,
-                "alignment" : 0,
-                "mainColor" : "(0, 0, 0, 255)"
-            },
-            "applyMarkup" : 1,
-            "text" : "Play",
-            "renderLayer" : 0,
-            "font_guid" : "assets/BubbleDub.ttf",
-            "enabled" : 1
-        }],
-            "Transform" : [{
-            "relative" : 1,
-            "scale" : "(1, 1)",
-            "rotation" : 0,
-            "position" : "(-42, -32)",
-            "enabled" : 1
-        }]
-        },
-        "Parent" : 9,
-        "Active" : 1,
-        "Name" : "Text"
-    },
-    "15" : {
-        "Components" : {
-            "Text" : [{
-            "outline" : 0,
-            "backgroundColor" : "(0, 0, 0, 255)",
-            "renderMode" : 0,
-            "boxPaddingHeight" : 2,
-            "hinting" : 0,
-            "boxPaddingWidth" : 4,
-            "boxed" : 0,
-            "layout" : {
-                "kerning" : 1,
-                "wordBreak" : 0,
-                "ignoreWhitespace" : 1,
-                "lineWrap" : 1,
-                "direction" : 0,
-                "pointSize" : 50,
-                "mainStyle" : 0,
-                "alignment" : 0,
-                "mainColor" : "(0, 0, 0, 255)"
-            },
-            "applyMarkup" : 1,
-            "text" : "Quit",
-            "renderLayer" : 0,
-            "font_guid" : "assets/BubbleDub.ttf",
-            "enabled" : 1
-        }],
-            "Transform" : [{
-            "relative" : 1,
-            "scale" : "(1, 1)",
-            "rotation" : 0,
-            "position" : "(-36, -24)",
-            "enabled" : 1
-        }]
-        },
-        "Parent" : 14,
-        "Active" : 1,
-        "Name" : "Text"
-    },
-    "2" : {
-        "Components" : {
-            "Transform" : [{
-            "relative" : 1,
-            "scale" : "(1, 1)",
-            "rotation" : 0,
-            "position" : "(0, 0)",
-            "enabled" : 1
-        }],
-            "InputGUI" : [{
-            "enabled" : 1
-        }],
-            "MainMenu" : [{
-            "enabled" : 1
-        }]
-        },
-        "Parent" : -1,
-        "Active" : 1,
-        "Name" : "Root"
-    },
-    "9" : {
-        "Components" : {
-            "Button" : [{
-            "renderLayer" : 0,
-            "enabled" : 1
-        }],
-            "StateSprite" : [{
-            "totalCurrentSegments" : 3,
-            "enabled" : 1,
-            "renderLayer" : 0,
-            "clip" : "(0, 0, 240, 80)",
-            "width" : 240,
-            "origin" : "(0.5, 0.5)",
-            "imgPath" : "assets/menu_button.png",
-            "height" : 80,
-            "flip" : 0,
-            "modulation" : "(40, 255, 255, 255)",
-            "blending" : 1,
-            "currentState" : "main",
-            "currentSubState" : 0,
-            "horizontalFlag" : 1
-        }],
-            "FitScreen" : [{
-            "transformOrigin" : "(0.5, 0.65)",
-            "bottomRightAnchor" : "(1, 1)",
-            "topLeftAnchor" : "(0, 0)",
-            "renderLayer" : 0,
-            "showDebug" : 0,
-            "enabled" : 1
-        }],
-            "Transform" : [{
-            "relative" : 1,
-            "scale" : "(1, 1)",
-            "rotation" : 0,
-            "position" : "(544.5, 612.3)",
-            "enabled" : 1
-        }]
-        },
-        "Parent" : 2,
-        "Active" : 1,
-        "Name" : "Play"
+        "Name" : "Ghost"
     }
 }
