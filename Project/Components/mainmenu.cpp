@@ -57,10 +57,10 @@ void MainMenu::GoPlay()
 {
 #ifndef OSSIUM_EDITOR
     // Load the main game scene.
-    entity->GetScene()->Load("assets/MainGame.rawr");
+    entity->GetScene()->LoadSafe(std::string("assets/MainGame.rawr"));
 #else
     Log.Info("Play button pressed!");
-#endif // OSSIUM_EDITOR
+#endif // OSSIUM_EDITOR*/
 }
 
 void MainMenu::Quit()
