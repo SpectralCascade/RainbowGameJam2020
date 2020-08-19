@@ -1,89 +1,19 @@
 {
-    "16" : {
-        "Components" : {
-            "FitScreen" : [{
-            "transformOrigin" : "(0.5, 0.35)",
-            "bottomRightAnchor" : "(1, 1)",
-            "topLeftAnchor" : "(0, 0)",
-            "renderLayer" : 0,
-            "showDebug" : 0,
-            "enabled" : 1
-        }],
-            "Transform" : [{
-            "relative" : 1,
-            "scale" : "(7, 7)",
-            "rotation" : 0,
-            "position" : "(504.5, 329.35)",
-            "enabled" : 1
-        }],
-            "Texture" : [{
-            "blending" : 1,
-            "modulation" : "(255, 255, 255, 255)",
-            "flip" : 0,
-            "imgPath" : "assets/gayghost.png",
-            "height" : 32,
-            "origin" : "(0.5, 0.35)",
-            "width" : 32,
-            "renderLayer" : 0,
-            "clip" : "(0, 0, 32, 32)",
-            "enabled" : 1
-        }]
-        },
-        "Parent" : 2,
-        "Active" : 1,
-        "Name" : "Ghost"
-    },
-    "8" : {
+    "9" : {
         "Components" : {
             "Transform" : [{
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(0, 47.05)",
+            "position" : "(557, 611.65)",
             "enabled" : 1
         }],
             "FitScreen" : [{
-            "transformOrigin" : "(0, 0.05)",
+            "transformOrigin" : "(0.5, 0.65)",
             "bottomRightAnchor" : "(1, 1)",
             "topLeftAnchor" : "(0, 0)",
             "renderLayer" : 0,
             "showDebug" : 0,
-            "enabled" : 1
-        }],
-            "Text" : [{
-            "outline" : 0,
-            "backgroundColor" : "(0, 0, 0, 255)",
-            "renderMode" : 0,
-            "boxPaddingHeight" : 2,
-            "hinting" : 0,
-            "boxPaddingWidth" : 4,
-            "boxed" : 0,
-            "layout" : {
-                "kerning" : 1,
-                "wordBreak" : 0,
-                "ignoreWhitespace" : 1,
-                "lineWrap" : 1,
-                "direction" : 0,
-                "pointSize" : 144,
-                "mainStyle" : 0,
-                "alignment" : 2,
-                "mainColor" : "(255, 0, 255, 255)"
-            },
-            "applyMarkup" : 1,
-            "text" : "One More Ghost!",
-            "renderLayer" : 5,
-            "font_guid" : "assets/BubbleDub.ttf",
-            "enabled" : 1
-        }]
-        },
-        "Parent" : 2,
-        "Active" : 1,
-        "Name" : "Title"
-    },
-    "14" : {
-        "Components" : {
-            "Button" : [{
-            "renderLayer" : 0,
             "enabled" : 1
         }],
             "StateSprite" : [{
@@ -102,67 +32,44 @@
             "currentSubState" : 0,
             "horizontalFlag" : 1
         }],
-            "FitScreen" : [{
-            "transformOrigin" : "(0.5, 0.9)",
-            "bottomRightAnchor" : "(1, 1)",
-            "topLeftAnchor" : "(0, 0)",
+            "Button" : [{
             "renderLayer" : 0,
-            "showDebug" : 0,
-            "enabled" : 1
-        }],
-            "Transform" : [{
-            "relative" : 1,
-            "scale" : "(0.8, 0.8)",
-            "rotation" : 0,
-            "position" : "(504.5, 846.9)",
             "enabled" : 1
         }]
         },
         "Parent" : 2,
         "Active" : 1,
-        "Name" : "Quit"
+        "Name" : "Play"
     },
-    "13" : {
+    "2" : {
         "Components" : {
-            "Text" : [{
-            "outline" : 0,
-            "backgroundColor" : "(0, 0, 0, 255)",
-            "renderMode" : 0,
-            "boxPaddingHeight" : 2,
-            "hinting" : 0,
-            "boxPaddingWidth" : 4,
-            "boxed" : 0,
-            "layout" : {
-                "kerning" : 1,
-                "wordBreak" : 0,
-                "ignoreWhitespace" : 1,
-                "lineWrap" : 1,
-                "direction" : 0,
-                "pointSize" : 72,
-                "mainStyle" : 0,
-                "alignment" : 0,
-                "mainColor" : "(0, 0, 0, 255)"
-            },
-            "applyMarkup" : 1,
-            "text" : "Play",
-            "renderLayer" : 5,
-            "font_guid" : "assets/BubbleDub.ttf",
+            "MainMenu" : [{
+            "enabled" : 1
+        }],
+            "InputGUI" : [{
             "enabled" : 1
         }],
             "Transform" : [{
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(-42, -32)",
+            "position" : "(0, 0)",
             "enabled" : 1
         }]
         },
-        "Parent" : 9,
+        "Parent" : -1,
         "Active" : 1,
-        "Name" : "Text"
+        "Name" : "Root"
     },
     "15" : {
         "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(-36, -24)",
+            "enabled" : 1
+        }],
             "Text" : [{
             "outline" : 0,
             "backgroundColor" : "(0, 0, 0, 255)",
@@ -187,43 +94,66 @@
             "renderLayer" : 5,
             "font_guid" : "assets/BubbleDub.ttf",
             "enabled" : 1
-        }],
-            "Transform" : [{
-            "relative" : 1,
-            "scale" : "(1, 1)",
-            "rotation" : 0,
-            "position" : "(-36, -24)",
-            "enabled" : 1
         }]
         },
         "Parent" : 14,
         "Active" : 1,
         "Name" : "Text"
     },
-    "2" : {
+    "13" : {
         "Components" : {
             "Transform" : [{
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(0, 0)",
+            "position" : "(-42, -32)",
             "enabled" : 1
         }],
-            "InputGUI" : [{
-            "enabled" : 1
-        }],
-            "MainMenu" : [{
+            "Text" : [{
+            "outline" : 0,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "renderMode" : 0,
+            "boxPaddingHeight" : 2,
+            "hinting" : 0,
+            "boxPaddingWidth" : 4,
+            "boxed" : 0,
+            "layout" : {
+                "kerning" : 1,
+                "wordBreak" : 0,
+                "ignoreWhitespace" : 1,
+                "lineWrap" : 1,
+                "direction" : 0,
+                "pointSize" : 72,
+                "mainStyle" : 0,
+                "alignment" : 0,
+                "mainColor" : "(0, 0, 0, 255)"
+            },
+            "applyMarkup" : 1,
+            "text" : "Play",
+            "renderLayer" : 5,
+            "font_guid" : "assets/BubbleDub.ttf",
             "enabled" : 1
         }]
         },
-        "Parent" : -1,
+        "Parent" : 9,
         "Active" : 1,
-        "Name" : "Root"
+        "Name" : "Text"
     },
-    "9" : {
+    "14" : {
         "Components" : {
-            "Button" : [{
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(0.8, 0.8)",
+            "rotation" : 0,
+            "position" : "(557, 846.9)",
+            "enabled" : 1
+        }],
+            "FitScreen" : [{
+            "transformOrigin" : "(0.5, 0.9)",
+            "bottomRightAnchor" : "(1, 1)",
+            "topLeftAnchor" : "(0, 0)",
             "renderLayer" : 0,
+            "showDebug" : 0,
             "enabled" : 1
         }],
             "StateSprite" : [{
@@ -242,8 +172,44 @@
             "currentSubState" : 0,
             "horizontalFlag" : 1
         }],
+            "Button" : [{
+            "renderLayer" : 0,
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 2,
+        "Active" : 1,
+        "Name" : "Quit"
+    },
+    "8" : {
+        "Components" : {
+            "Text" : [{
+            "outline" : 0,
+            "backgroundColor" : "(0, 0, 0, 255)",
+            "renderMode" : 0,
+            "boxPaddingHeight" : 2,
+            "hinting" : 0,
+            "boxPaddingWidth" : 4,
+            "boxed" : 0,
+            "layout" : {
+                "kerning" : 1,
+                "wordBreak" : 0,
+                "ignoreWhitespace" : 1,
+                "lineWrap" : 1,
+                "direction" : 0,
+                "pointSize" : 144,
+                "mainStyle" : 0,
+                "alignment" : 2,
+                "mainColor" : "(255, 0, 255, 255)"
+            },
+            "applyMarkup" : 1,
+            "text" : "One More Ghost!",
+            "renderLayer" : 5,
+            "font_guid" : "assets/BubbleDub.ttf",
+            "enabled" : 1
+        }],
             "FitScreen" : [{
-            "transformOrigin" : "(0.5, 0.65)",
+            "transformOrigin" : "(0, 0.05)",
             "bottomRightAnchor" : "(1, 1)",
             "topLeftAnchor" : "(0, 0)",
             "renderLayer" : 0,
@@ -254,12 +220,46 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(504.5, 611.65)",
+            "position" : "(0, 47.05)",
             "enabled" : 1
         }]
         },
         "Parent" : 2,
         "Active" : 1,
-        "Name" : "Play"
+        "Name" : "Title"
+    },
+    "16" : {
+        "Components" : {
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 0,
+            "imgPath" : "assets/gayghost.png",
+            "height" : 32,
+            "origin" : "(0.5, 0.35)",
+            "width" : 32,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 32, 32)",
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(7, 7)",
+            "rotation" : 0,
+            "position" : "(557, 329.35)",
+            "enabled" : 1
+        }],
+            "FitScreen" : [{
+            "transformOrigin" : "(0.5, 0.35)",
+            "bottomRightAnchor" : "(1, 1)",
+            "topLeftAnchor" : "(0, 0)",
+            "renderLayer" : 0,
+            "showDebug" : 0,
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 2,
+        "Active" : 1,
+        "Name" : "Ghost"
     }
 }

@@ -6,11 +6,7 @@ REGISTER_COMPONENT(FitScreen);
 
 void FitScreen::OnLoadFinish()
 {
-#ifdef OSSIUM_EDITOR
     GraphicComponent::OnLoadFinish();
-#else
-    Component::OnLoadFinish();
-#endif // OSSIUM_EDITOR
     dirty = true;
 }
 

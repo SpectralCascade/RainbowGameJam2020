@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1597591417 source:c:\users\2013b\git\rainbowgamejam2020\main.cpp
+1597875884 source:c:\users\2013b\git\rainbowgamejam2020\main.cpp
 	<Ossium.h>
 	<OssiumEditor.h>
 
@@ -28,7 +28,7 @@
 	"Core/textlayout.h"
 	"Components/button.h"
 
-1597416365 c:\users\2013b\git\ossium\engine\src\core\config.h
+1597872597 c:\users\2013b\git\ossium\engine\src\core\config.h
 	"schemamodel.h"
 	"stringconvert.h"
 
@@ -84,7 +84,7 @@
 	<any>
 	"helpermacros.h"
 
-1597510340 c:\users\2013b\git\ossium\engine\src\editor\core\editorserializer.h
+1597874965 c:\users\2013b\git\ossium\engine\src\editor\core\editorserializer.h
 	"../../Core/stringconvert.h"
 	"../../Core/schematype.h"
 	"../../Core/jsondata.h"
@@ -106,7 +106,7 @@
 	"lrucache.h"
 	"../Core/helpermacros.h"
 
-1597450052 c:\users\2013b\git\ossium\engine\src\core\resourcecontroller.h
+1597871864 c:\users\2013b\git\ossium\engine\src\core\resourcecontroller.h
 	<string.h>
 	<unordered_map>
 	"stringconvert.h"
@@ -137,7 +137,7 @@
 	"helpermacros.h"
 	<SDL2/SDL.h>
 
-1597153124 c:\users\2013b\git\ossium\engine\src\core\coremaths.h
+1597874809 c:\users\2013b\git\ossium\engine\src\core\coremaths.h
 	<string>
 	<Box2D/Common/b2Math.h>
 	"mathconsts.h"
@@ -216,8 +216,8 @@
 	"resourcecontroller.h"
 	"schemamodel.h"
 
-1582026264 c:\users\2013b\git\ossium\engine\src\core\delta.h
-	"jsondata.h"
+1597873890 c:\users\2013b\git\ossium\engine\src\core\delta.h
+	"helpermacros.h"
 
 1597573413 c:\users\2013b\git\ossium\engine\src\components\statesprite.h
 	<map>
@@ -291,10 +291,11 @@
 	<random>
 	"coremaths.h"
 
-1596303213 c:\users\2013b\git\ossium\engine\src\core\physics.h
+1597875657 c:\users\2013b\git\ossium\engine\src\core\physics.h
 	<Box2D/Box2D.h>
 	<functional>
 	"coremaths.h"
+	"services.h"
 
 1578398918 c:\users\2013b\git\ossium\engine\box2d\box2d\box2d.h
 	"Box2D/Common/b2Settings.h"
@@ -454,10 +455,11 @@
 	"../Core/stringintern.h"
 	"text.h"
 
-1596304457 c:\users\2013b\git\ossium\engine\src\core\enginesystem.h
+1597875059 c:\users\2013b\git\ossium\engine\src\core\enginesystem.h
 	"input.h"
 	"delta.h"
 	"component.h"
+	"config.h"
 
 1596392500 c:\users\2013b\git\ossium\engine\src\core\texturepack.h
 	<math.h>
@@ -506,7 +508,7 @@
 	"editorwindow.h"
 	"../../Core/tree.h"
 
-1597527376 c:\users\2013b\git\ossium\engine\src\editor\core\editorcontroller.h
+1597874077 c:\users\2013b\git\ossium\engine\src\editor\core\editorcontroller.h
 	"../../Ossium.h"
 	"editorstyle.h"
 	"editorlayout.h"
@@ -879,7 +881,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1597577743 source:c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.cpp
+1597876068 source:c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.cpp
 	"fitscreen.h"
 
 1597577727 c:\users\2013b\git\rainbowgamejam2020\project\components\fitscreen.h
@@ -887,9 +889,33 @@
 
 1597509020 c:\users\2013b\git\ossium\engine\src\core\schematype.h
 
-1597589617 source:c:\users\2013b\git\rainbowgamejam2020\project\components\mainmenu.cpp
+1597876096 source:c:\users\2013b\git\rainbowgamejam2020\project\components\mainmenu.cpp
 	"mainmenu.h"
 
 1597587719 c:\users\2013b\git\rainbowgamejam2020\project\components\mainmenu.h
 	<Ossium.h>
+
+1597874572 source:c:\users\2013b\git\rainbowgamejam2020\project\components\collider.cpp
+	"collider.h"
+
+1597874619 c:\users\2013b\git\rainbowgamejam2020\project\components\collider.h
+	<Ossium.h>
+
+1597875391 source:c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.cpp
+	"gamecontroller.h"
+
+1597875387 c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.h
+	<Ossium.h>
+
+1597874981 source:c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.cpp
+	"ghost.h"
+
+1597787983 c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.h
+	<Ossium.h>
+
+1597874989 source:c:\users\2013b\git\rainbowgamejam2020\project\components\rigidcircle.cpp
+	"rigidcircle.h"
+
+1597792471 c:\users\2013b\git\rainbowgamejam2020\project\components\rigidcircle.h
+	"collider.h"
 

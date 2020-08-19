@@ -57,7 +57,7 @@ void MainMenu::GoPlay()
 {
 #ifndef OSSIUM_EDITOR
     // Load the main game scene.
-    entity->GetScene()->Load("assets/Game.rawr");
+    entity->GetScene()->Load("assets/MainGame.rawr");
 #else
     Log.Info("Play button pressed!");
 #endif // OSSIUM_EDITOR
