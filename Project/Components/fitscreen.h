@@ -28,6 +28,8 @@ public:
 
     void Render(Renderer& renderer);
 
+    void SetDirty();
+
 private:
     bool dirty = true;
 

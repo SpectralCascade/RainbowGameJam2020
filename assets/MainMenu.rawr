@@ -5,7 +5,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(557, 611.65)",
+            "position" : "(234, 611.65)",
             "enabled" : 1
         }],
             "FitScreen" : [{
@@ -44,6 +44,8 @@
     "2" : {
         "Components" : {
             "MainMenu" : [{
+            "speed" : 0.5,
+            "ghostOffset" : "(0, 0.015)",
             "enabled" : 1
         }],
             "InputGUI" : [{
@@ -145,7 +147,7 @@
             "relative" : 1,
             "scale" : "(0.8, 0.8)",
             "rotation" : 0,
-            "position" : "(557, 846.9)",
+            "position" : "(234, 846.9)",
             "enabled" : 1
         }],
             "FitScreen" : [{
@@ -246,7 +248,7 @@
             "relative" : 1,
             "scale" : "(7, 7)",
             "rotation" : 0,
-            "position" : "(557, 329.35)",
+            "position" : "(234, 329.35)",
             "enabled" : 1
         }],
             "FitScreen" : [{

@@ -10,6 +10,11 @@ void FitScreen::OnLoadFinish()
     dirty = true;
 }
 
+void FitScreen::SetDirty()
+{
+    dirty = true;
+}
+
 void FitScreen::Render(Renderer& renderer)
 {
     Vector2 screenDimensions = Vector2(renderer.GetViewportRect().w, renderer.GetViewportRect().h);

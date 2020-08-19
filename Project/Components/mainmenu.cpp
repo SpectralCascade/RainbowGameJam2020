@@ -1,4 +1,5 @@
 #include "mainmenu.h"
+#include "fitscreen.h"
 
 REGISTER_COMPONENT(MainMenu);
 
@@ -39,6 +40,34 @@ void MainMenu::OnLoadFinish()
             Log.Error("Failed to locate quit button!");
         }
     }
+
+    delta.Init();
+}
+
+void MainMenu::Update()
+{
+    Entity* ghost = entity->Find("Ghost");
+    if (ghost != nullptr)
+    {
+        FitScreen* ghostUI = ghost->GetComponent<FitScreen>();
+        if (ghostStartPos == Vector2::Zero)
+        {
+            ghostStartPos = ghostUI->transformOrigin;
+        }
+
+        // Increment animation by a frame
+        animPercent += delta.Time() * speed;
+        animPercent = std::max(0.0f, animPercent);
+
+        // Actually perform the animation
+        ghostUI->transformOrigin = Vector2(
+            Tweening::Sine(ghostStartPos.x, ghostStartPos.x + ghostOffset.x, animPercent),
+            Tweening::Sine(ghostStartPos.y, ghostStartPos.y + ghostOffset.y, animPercent)
+        );
+
+        ghostUI->SetDirty();
+    }
+    delta.Update();
 }
 
 void MainMenu::CleanupHandles()
@@ -60,7 +89,7 @@ void MainMenu::GoPlay()
     entity->GetScene()->LoadSafe(std::string("assets/MainGame.rawr"));
 #else
     Log.Info("Play button pressed!");
-#endif // OSSIUM_EDITOR*/
+#endif // OSSIUM_EDITOR
 }
 
 void MainMenu::Quit()
