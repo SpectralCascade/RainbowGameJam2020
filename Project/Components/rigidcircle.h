@@ -3,7 +3,7 @@
 
 #include "collider.h"
 
-struct RigidCircleSchema : public Schema<RigidCircleSchema, 1>
+struct CircleColliderSchema : public Schema<RigidCircleSchema, 1>
 {
     DECLARE_BASE_SCHEMA(RigidCircleSchema, 1);
 
@@ -11,13 +11,20 @@ struct RigidCircleSchema : public Schema<RigidCircleSchema, 1>
 
 };
 
-class RigidCircle : public Collider, public RigidCircleSchema
+class CircleCollider : public Collider, public CircleColliderSchema
 {
 public:
-    CONSTRUCT_SCHEMA(Collider, RigidCircleSchema);
-    DECLARE_COMPONENT(Collider, RigidCircle);
+    CONSTRUCT_SCHEMA(Collider, CircleColliderSchema);
+    DECLARE_COMPONENT(Collider, CircleCollider);
 
-    void OnLoadFinish();
+    /// Return an immutable reference to the shape.
+    const b2Shape& GetShape();
+
+    /// Return the shape as it's true type.
+    const b2CircleShape& GetCircleShape();
+
+    // Used for debugging or in editor.
+    void Render(Renderer& renderer);
 
 private:
     b2CircleShape shape;

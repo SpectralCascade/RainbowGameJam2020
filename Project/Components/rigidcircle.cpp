@@ -1,33 +1,23 @@
 #include "rigidcircle.h"
 
-void RigidCircle::OnLoadFinish()
+REGISTER_COMPONENT(CircleCollider);
+
+const b2Shape& CircleCollider::GetShape()
 {
-    Physics::PhysicsWorld* world = entity->GetService<Physics::PhysicsWorld>();
-    DEBUG_ASSERT(world != nullptr, "Physics world cannot be NULL");
-#ifdef OSSIUM_EDITOR
-    dirty |= (staticBody != _oldStaticBody);
-    _oldStaticBody = staticBody;
-#endif // OSSIUM_EDITOR
-    if (body == nullptr)
-    {
-        // Create a circle shape
-        b2BodyDef bodyDef;
-        bodyDef.position.Set(GetTransform()->GetWorldPosition().x, GetTransform()->GetWorldPosition().y);
-        if (!staticBody)
-        {
-            bodyDef.type = b2_dynamicBody;
-        }
-        body = world->CreateBody(&bodyDef);
-        b2FixtureDef fixDef;
-        fixDef.shape = &shape;
-        fixDef.density = density;
-        fixDef.friction = friction;
-        fixture = body->CreateFixture(&fixDef);
-        dirty = true;
-    }
-    if (dirty)
-    {
-        shape.m_radius = radius;
-        body->ResetMassData();
-    }
+    return shape;
+}
+
+const b2CircleShape& CircleCollider::GetCircleShape()
+{
+    return shape;
+}
+
+void CircleCollider::Render(Renderer& renderer)
+{
+    Ossium::Circle c = {
+        .x = GetTransform()->GetWorldPosition().x,
+        .y = GetTransform()->GetWorldPosition().y,
+        .r = radius
+    };
+    c.Draw(renderer, Ossium::Colors::GREEN);
 }
