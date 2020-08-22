@@ -4,6 +4,7 @@ REGISTER_COMPONENT(GuardWaypoint);
 
 void GuardWaypoint::OnLoadFinish()
 {
+    ParentType::OnLoadFinish();
     // Build waypoint map
     if (nextEntityName.empty())
     {
