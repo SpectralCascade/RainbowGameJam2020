@@ -33,10 +33,7 @@ int main(int argc, char* argv[])
     config.windowWidth = 1024;
     config.windowHeight = 768;
 
-    InputController input;
-    Physics::PhysicsWorld world(Vector2::Zero);
-
-    EngineSystem engine(config, &input, &world);
+    EngineSystem engine(config);
 
     while (engine.Update())
     {

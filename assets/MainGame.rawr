@@ -1,5 +1,314 @@
 {
-    "0" : {
+    "32" : {
+        "Components" : {
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 0,
+            "tiled" : 1,
+            "imgPath" : "assets/tiles/rpgTile074.png",
+            "height" : 64,
+            "origin" : "(0.5, 0.5)",
+            "width" : 768,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 64, 64)",
+            "enabled" : 1
+        }],
+            "PhysicsBody" : [{
+            "initialAngularVelocity" : 0,
+            "initialLinearVelocity" : "(0, 0)",
+            "enabled" : 1,
+            "density" : 1,
+            "sensor" : 0,
+            "friction" : 0.3,
+            "bullet" : 0,
+            "startAwake" : 1,
+            "bodyType" : 0,
+            "restitution" : 0.5,
+            "angularDamping" : 0.5,
+            "allowSleep" : 1,
+            "fixedRotation" : 0,
+            "gravityScale" : 1,
+            "linearDamping" : 0.5
+        }],
+            "BoxCollider" : [{
+            "height" : 64,
+            "width" : 896,
+            "renderLayer" : 3,
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(512, 736)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 7,
+        "Active" : 1,
+        "Name" : "Wall Bottom"
+    },
+    "2" : {
+        "Components" : {
+            "Text" : [{
+            "outline" : 0,
+            "backgroundColor" : "(0, 0, 0, 100)",
+            "renderMode" : 0,
+            "boxPaddingHeight" : 2,
+            "hinting" : 0,
+            "boxPaddingWidth" : 4,
+            "boxed" : 0,
+            "layout" : {
+                "kerning" : 1,
+                "wordBreak" : 0,
+                "ignoreWhitespace" : 1,
+                "lineWrap" : 1,
+                "direction" : 0,
+                "pointSize" : 72,
+                "mainStyle" : 0,
+                "alignment" : 0,
+                "mainColor" : "(0, 0, 0, 255)"
+            },
+            "applyMarkup" : 1,
+            "text" : "Ghosts: {0}",
+            "renderLayer" : 40,
+            "font_guid" : "assets/BubbleDub.ttf",
+            "enabled" : 1
+        }],
+            "FitScreen" : [{
+            "transformOrigin" : "(0.01, 0)",
+            "bottomRightAnchor" : "(1, 0.07)",
+            "topLeftAnchor" : "(0, 0)",
+            "renderLayer" : -1,
+            "showDebug" : 0,
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(10.21, 0)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 1,
+        "Active" : 1,
+        "Name" : "GhostCount"
+    },
+    "36" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(32, 384)",
+            "enabled" : 1
+        }],
+            "BoxCollider" : [{
+            "height" : 768,
+            "width" : 64,
+            "renderLayer" : 3,
+            "enabled" : 1
+        }],
+            "PhysicsBody" : [{
+            "initialAngularVelocity" : 0,
+            "initialLinearVelocity" : "(0, 0)",
+            "enabled" : 1,
+            "density" : 1,
+            "sensor" : 0,
+            "friction" : 0.3,
+            "bullet" : 0,
+            "startAwake" : 1,
+            "bodyType" : 0,
+            "restitution" : 0.5,
+            "angularDamping" : 0.5,
+            "allowSleep" : 1,
+            "fixedRotation" : 0,
+            "gravityScale" : 1,
+            "linearDamping" : 0.5
+        }],
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 2,
+            "tiled" : 1,
+            "imgPath" : "assets/tiles/rpgTile062.png",
+            "height" : 768,
+            "origin" : "(0.5, 0.5)",
+            "width" : 64,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 64, 64)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 7,
+        "Active" : 1,
+        "Name" : "Wall Left"
+    },
+    "37" : {
+        "Components" : {
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 0,
+            "tiled" : 1,
+            "imgPath" : "assets/tiles/rpgTile133.png",
+            "height" : 686,
+            "origin" : "(0.5, 0.5)",
+            "width" : 896,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 64, 64)",
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(512, 407)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 8,
+        "Active" : 1,
+        "Name" : "floor 1"
+    },
+    "21" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(928, 32)",
+            "enabled" : 1
+        }],
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 1,
+            "tiled" : 0,
+            "imgPath" : "assets/tiles/rpgTile081.png",
+            "height" : 64,
+            "origin" : "(0.5, 0.5)",
+            "width" : 64,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 64, 64)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 7,
+        "Active" : 1,
+        "Name" : "Wall Top Right"
+    },
+    "20" : {
+        "Components" : {
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 0,
+            "tiled" : 0,
+            "imgPath" : "assets/tiles/rpgTile081.png",
+            "height" : 64,
+            "origin" : "(0.5, 0.5)",
+            "width" : 64,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 64, 64)",
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(96, 32)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 7,
+        "Active" : 1,
+        "Name" : "Wall Top Left"
+    },
+    "34" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(96, 736)",
+            "enabled" : 1
+        }],
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 0,
+            "tiled" : 0,
+            "imgPath" : "assets/tiles/rpgTile081.png",
+            "height" : 64,
+            "origin" : "(0.5, 0.5)",
+            "width" : 64,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 64, 64)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 7,
+        "Active" : 1,
+        "Name" : "Wall Bottom Left"
+    },
+    "39" : {
+        "Components" : {
+            "Player" : [{
+            "maxSpeed" : 5,
+            "moveForce" : 3,
+            "enabled" : 1
+        }],
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 0,
+            "tiled" : 0,
+            "imgPath" : "assets/gayghost.png",
+            "height" : 64,
+            "origin" : "(0.5, 0.5)",
+            "width" : 64,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 32, 32)",
+            "enabled" : 1
+        }],
+            "PhysicsBody" : [{
+            "initialAngularVelocity" : 0,
+            "initialLinearVelocity" : "(0, 0)",
+            "enabled" : 1,
+            "density" : 1,
+            "sensor" : 0,
+            "friction" : 0.3,
+            "bullet" : 0,
+            "startAwake" : 1,
+            "bodyType" : 2,
+            "restitution" : 0.5,
+            "angularDamping" : 1,
+            "allowSleep" : 1,
+            "fixedRotation" : 1,
+            "gravityScale" : 0,
+            "linearDamping" : 0.9
+        }],
+            "CircleCollider" : [{
+            "radius" : 28,
+            "renderLayer" : 31,
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(256, 256)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 6,
+        "Active" : 1,
+        "Name" : "PlayerController"
+    },
+    "8" : {
         "Components" : {
             "Transform" : [{
             "relative" : 1,
@@ -9,9 +318,100 @@
             "enabled" : 1
         }]
         },
-        "Parent" : -1,
+        "Parent" : 6,
         "Active" : 1,
-        "Name" : "Root"
+        "Name" : "Floor"
+    },
+    "38" : {
+        "Components" : {
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 1,
+            "tiled" : 1,
+            "imgPath" : "assets/tiles/rpgTile062.png",
+            "height" : 768,
+            "origin" : "(0.5, 0.5)",
+            "width" : 64,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 64, 64)",
+            "enabled" : 1
+        }],
+            "PhysicsBody" : [{
+            "initialAngularVelocity" : 0,
+            "initialLinearVelocity" : "(0, 0)",
+            "enabled" : 1,
+            "density" : 1,
+            "sensor" : 0,
+            "friction" : 0.3,
+            "bullet" : 0,
+            "startAwake" : 1,
+            "bodyType" : 0,
+            "restitution" : 0.5,
+            "angularDamping" : 0.5,
+            "allowSleep" : 1,
+            "fixedRotation" : 0,
+            "gravityScale" : 1,
+            "linearDamping" : 0.5
+        }],
+            "BoxCollider" : [{
+            "height" : 768,
+            "width" : 64,
+            "renderLayer" : 3,
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(992, 384)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 7,
+        "Active" : 1,
+        "Name" : "Wall Right"
+    },
+    "6" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(0, 0)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 0,
+        "Active" : 1,
+        "Name" : "World"
+    },
+    "35" : {
+        "Components" : {
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 1,
+            "tiled" : 0,
+            "imgPath" : "assets/tiles/rpgTile081.png",
+            "height" : 64,
+            "origin" : "(0.5, 0.5)",
+            "width" : 64,
+            "renderLayer" : 0,
+            "clip" : "(0, 0, 64, 64)",
+            "enabled" : 1
+        }],
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(928, 736)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 7,
+        "Active" : 1,
+        "Name" : "Wall Bottom Right"
     },
     "1" : {
         "Components" : {
@@ -27,51 +427,82 @@
         "Active" : 1,
         "Name" : "UI"
     },
-    "2" : {
+    "9" : {
         "Components" : {
             "Transform" : [{
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(10.87, 0)",
+            "position" : "(512, 32)",
             "enabled" : 1
         }],
-            "FitScreen" : [{
-            "transformOrigin" : "(0.01, 0)",
-            "bottomRightAnchor" : "(1, 1)",
-            "topLeftAnchor" : "(0, 0)",
-            "renderLayer" : 0,
-            "showDebug" : 0,
+            "BoxCollider" : [{
+            "height" : 64,
+            "width" : 896,
+            "renderLayer" : 3,
             "enabled" : 1
         }],
-            "Text" : [{
-            "outline" : 0,
-            "backgroundColor" : "(0, 0, 0, 255)",
-            "renderMode" : 0,
-            "boxPaddingHeight" : 2,
-            "hinting" : 0,
-            "boxPaddingWidth" : 4,
-            "boxed" : 0,
-            "layout" : {
-                "kerning" : 1,
-                "wordBreak" : 0,
-                "ignoreWhitespace" : 1,
-                "lineWrap" : 1,
-                "direction" : 0,
-                "pointSize" : 72,
-                "mainStyle" : 0,
-                "alignment" : 0,
-                "mainColor" : "(0, 200, 0, 255)"
-            },
-            "applyMarkup" : 1,
-            "text" : "Ghosts: {0}",
+            "PhysicsBody" : [{
+            "initialAngularVelocity" : 0,
+            "initialLinearVelocity" : "(0, 0)",
+            "enabled" : 1,
+            "density" : 1,
+            "sensor" : 0,
+            "friction" : 0.3,
+            "bullet" : 0,
+            "startAwake" : 1,
+            "bodyType" : 0,
+            "restitution" : 0.5,
+            "angularDamping" : 0.5,
+            "allowSleep" : 1,
+            "fixedRotation" : 0,
+            "gravityScale" : 1,
+            "linearDamping" : 0.5
+        }],
+            "Texture" : [{
+            "blending" : 1,
+            "modulation" : "(255, 255, 255, 255)",
+            "flip" : 0,
+            "tiled" : 1,
+            "imgPath" : "assets/tiles/rpgTile074.png",
+            "height" : 64,
+            "origin" : "(0.5, 0.5)",
+            "width" : 768,
             "renderLayer" : 0,
-            "font_guid" : "assets/BubbleDub.ttf",
+            "clip" : "(0, 0, 64, 64)",
             "enabled" : 1
         }]
         },
-        "Parent" : 1,
+        "Parent" : 7,
         "Active" : 1,
-        "Name" : "GhostCount"
+        "Name" : "Wall Top"
+    },
+    "0" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(0, 0)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : -1,
+        "Active" : 1,
+        "Name" : "Root"
+    },
+    "7" : {
+        "Components" : {
+            "Transform" : [{
+            "relative" : 1,
+            "scale" : "(1, 1)",
+            "rotation" : 0,
+            "position" : "(0, 0)",
+            "enabled" : 1
+        }]
+        },
+        "Parent" : 6,
+        "Active" : 1,
+        "Name" : "StaticColliders"
     }
 }

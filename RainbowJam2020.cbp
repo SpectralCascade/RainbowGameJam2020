@@ -27,7 +27,7 @@
 					<Add directory="C:/Users/2013b/Git/Ossium/Engine/Box2D" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--whole-archive,C:\Users\2013b\Git\Ossium\Engine\bin\OssiumEditorDebug\libOssium.a,--no-whole-archive" />
+					<Add option="-Wl,--whole-archive,C:\Users\2013b\Git\Ossium\Engine\bin\ossium\libossium.a,--no-whole-archive" />
 					<Add option="C:\Users\2013b\Git\Ossium\Engine\Box2D\bin\Release\libBox2D.a" />
 					<Add option="-lmingw32" />
 					<Add option="-lcomdlg32" />
@@ -67,7 +67,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="-Wl,--whole-archive,C:\Users\2013b\Git\Ossium\Engine\bin\OssiumEditorDebug\libOssium.a,--no-whole-archive" />
+					<Add option="-Wl,--whole-archive,C:\Users\2013b\Git\Ossium\Engine\bin\Debug\libOssium.a,--no-whole-archive" />
 					<Add option="C:\Users\2013b\Git\Ossium\Engine\Box2D\bin\Release\libBox2D.a" />
 					<Add option="-lmingw32" />
 					<Add option="-lcomdlg32" />
@@ -133,8 +133,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Project/Components/collider.cpp" />
-		<Unit filename="Project/Components/collider.h" />
 		<Unit filename="Project/Components/fitscreen.cpp" />
 		<Unit filename="Project/Components/fitscreen.h" />
 		<Unit filename="Project/Components/gamecontroller.cpp" />
@@ -143,8 +141,8 @@
 		<Unit filename="Project/Components/ghost.h" />
 		<Unit filename="Project/Components/mainmenu.cpp" />
 		<Unit filename="Project/Components/mainmenu.h" />
-		<Unit filename="Project/Components/rigidcircle.cpp" />
-		<Unit filename="Project/Components/rigidcircle.h" />
+		<Unit filename="Project/Components/player.cpp" />
+		<Unit filename="Project/Components/player.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
