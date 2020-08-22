@@ -28,3 +28,16 @@ ABILITIES:
 - WoooOOOooOOOooooo: Make a bunch of noise to distract ghostbusters.
 - Phase: Slip through regular walls/doors for a limited period of time. (Note, some 'anti-ghost' walls are not possible to phase through). Requires plasma
 - Woosh: Fast movement that lets you avoid repetative timed obstacles (like pacman hallways)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                   STORY:
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+You're a witch who's been imprisoned for convening with spirits. Fortunately, a friendly bunch of queer ghosts have arrived to help you break out!
+As you have no weapons and you only practice non-violent magic, you'll have to sneak around the guards and find ghost friends to scare them off before you can escape...
+
+
+

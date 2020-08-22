@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1598053327 source:c:\users\2013b\git\rainbowgamejam2020\main.cpp
+1598059816 source:c:\users\2013b\git\rainbowgamejam2020\main.cpp
 	<Ossium.h>
 	<OssiumEditor.h>
 
@@ -126,7 +126,7 @@
 	"renderer.h"
 	"colors.h"
 
-1596303236 c:\users\2013b\git\ossium\engine\src\core\renderer.h
+1598110509 c:\users\2013b\git\ossium\engine\src\core\renderer.h
 	<vector>
 	<queue>
 	<set>
@@ -293,7 +293,7 @@
 	<random>
 	"coremaths.h"
 
-1598044953 c:\users\2013b\git\ossium\engine\src\core\physics.h
+1598113746 c:\users\2013b\git\ossium\engine\src\core\physics.h
 	<Box2D/Box2D.h>
 	<functional>
 	"coremaths.h"
@@ -912,11 +912,13 @@
 1597875387 c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.h
 	<Ossium.h>
 
-1597874981 source:c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.cpp
+1598140388 source:c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.cpp
 	"ghost.h"
+	"guard.h"
 
-1597787983 c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.h
+1598136290 c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.h
 	<Ossium.h>
+	"player.h"
 
 1598013292 source:c:\users\2013b\git\rainbowgamejam2020\project\components\rigidcircle.cpp
 	"rigidcircle.h"
@@ -930,21 +932,37 @@
 1598015226 c:\users\2013b\git\rainbowgamejam2020\project\components\boxcollider.h
 	"collider.h"
 
-1598044953 c:\users\2013b\git\ossium\engine\src\components\boxcollider.h
+1598112529 c:\users\2013b\git\ossium\engine\src\components\boxcollider.h
 	"collider.h"
 
-1598052772 c:\users\2013b\git\ossium\engine\src\components\collider.h
+1598121556 c:\users\2013b\git\ossium\engine\src\components\collider.h
 	"../Core/physics.h"
 	"../Core/component.h"
 
-1598044958 c:\users\2013b\git\ossium\engine\src\components\rigidcircle.h
+1598113625 c:\users\2013b\git\ossium\engine\src\components\rigidcircle.h
 	"collider.h"
 
-1598056428 source:c:\users\2013b\git\rainbowgamejam2020\project\components\player.cpp
+1598140340 source:c:\users\2013b\git\rainbowgamejam2020\project\components\player.cpp
 	"player.h"
+	"ghost.h"
 
-1598035078 c:\users\2013b\git\rainbowgamejam2020\project\components\player.h
+1598140307 c:\users\2013b\git\rainbowgamejam2020\project\components\player.h
 	<Ossium.h>
 
 1598042251 c:\users\2013b\git\ossium\engine\src\core\resource.h
+
+1598110761 source:c:\users\2013b\git\rainbowgamejam2020\project\components\camera.cpp
+	"camera.h"
+
+1598110757 c:\users\2013b\git\rainbowgamejam2020\project\components\camera.h
+	<Ossium.h>
+
+1598140116 source:c:\users\2013b\git\rainbowgamejam2020\project\components\guardwaypoint.cpp
+	"guardwaypoint.h"
+
+1598140324 c:\users\2013b\git\rainbowgamejam2020\project\components\guardwaypoint.h
+	<Ossium.h>
+
+1598140422 c:\users\2013b\git\rainbowgamejam2020\project\components\guard.h
+	<Ossium.h>
 

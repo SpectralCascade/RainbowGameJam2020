@@ -4,6 +4,9 @@
 #include <Ossium.h>
 
 using namespace Ossium;
+using namespace std;
+
+class Ghost;
 
 struct PlayerSchema : public Schema<PlayerSchema, 20>
 {
@@ -29,6 +32,9 @@ public:
     void OnLoadFinish();
 
     void Update();
+
+    /// Ghosts circling the player
+    vector<Ghost*> ghosts;
 
 private:
     // Handy references

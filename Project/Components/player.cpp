@@ -1,4 +1,5 @@
 #include "player.h"
+#include "ghost.h"
 
 REGISTER_COMPONENT(Player);
 
@@ -55,12 +56,11 @@ void Player::Update()
         }
 
         // Flip texture to show direction of travel
-        float xvec = physicsBody->body->GetLinearVelocity().x;
-        if (xvec > 0)
+        if (force.x > 0)
         {
             playerImage->SetFlip(SDL_RendererFlip::SDL_FLIP_NONE);
         }
-        else if (xvec < 0)
+        else if (force.x < 0)
         {
             playerImage->SetFlip(SDL_RendererFlip::SDL_FLIP_HORIZONTAL);
         }

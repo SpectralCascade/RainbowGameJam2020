@@ -133,6 +133,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Project/Components/camera.cpp" />
+		<Unit filename="Project/Components/camera.h" />
 		<Unit filename="Project/Components/fitscreen.cpp" />
 		<Unit filename="Project/Components/fitscreen.h" />
 		<Unit filename="Project/Components/gamecontroller.cpp" />
