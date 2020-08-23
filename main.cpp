@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 {
     Config config;
     config.windowTitle = "One More Ghost!";
-    config.startScene = "assets/MainMenu.rawr";
+    config.startScene = argc > 1 ? argv[1] : "assets/scenes/MainMenu.rawr";
     config.windowWidth = 1024;
     config.windowHeight = 768;
 
