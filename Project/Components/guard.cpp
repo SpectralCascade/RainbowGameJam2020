@@ -56,24 +56,27 @@ void Guard::Update()
         origin.x = PTM(origin.x);
         origin.y = PTM(origin.y);
 
-        world->RayCast(
-            Ray(origin, playerDiff.Normalized()),
-            Physics::OnRayHit([&] (b2Fixture* fixture, const Vector2& point, const Vector2& normal, float32 fraction) {
-                if (fixture->GetBody() == body->body)
-                {
-                    // Ignore own body
-                    return -1.0f;
-                }
-                else if (fixture->GetUserData() != nullptr)
-                {
-                    Collider* collider = (Collider*)fixture->GetUserData();
-                    // Is the collider the player or not?
-                    canSeePlayer = collider->GetEntity()->GetComponent<Player>() == player;
-                }
-                // Terminate raycast
-                return 0.0f;
-            })
-        );
+        Log.Info("Guard raycasting for player...");
+
+        Physics::OnRayHit onHit = Physics::OnRayHit([&] (b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float32 fraction) {
+            if (fixture->GetBody() == body->body)
+            {
+                // Ignore own body
+                Log.Info("Ignoring own body, continuing raycast...");
+                return 1.0f;
+            }
+            else if (fixture->GetUserData() != nullptr)
+            {
+                Collider* collider = (Collider*)fixture->GetUserData();
+                // Is the collider the player or not?
+                canSeePlayer = collider->GetEntity()->GetComponent<Player>() == player;
+                Log.Info("Found collider on entity named '{0}'. Is player? {1}", collider->GetEntity()->name, canSeePlayer ? "yes" : "no");
+            }
+            // Terminate raycast
+            return 0.0f;
+        });
+
+        world->RayCast(Ray(origin, playerDiff.Normalized()), &onHit);
 
     }
 
@@ -173,6 +176,6 @@ float Guard::MoveTowards(Vector2 target)
     {
         body->body->ApplyForceToCenter(differenceToTarget.Normalized() * moveForce, true);
     }
-    direction = differenceToTarget.Normalized();
+    direction = Vector2(body->body->GetLinearVelocity()).Normalized();
     return differenceToTarget.Length();
 }

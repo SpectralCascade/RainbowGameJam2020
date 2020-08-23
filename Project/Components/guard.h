@@ -48,6 +48,9 @@ public:
 
     bool CanSeePlayer();
 
+    // Raycast callback to detect the player
+    float32 DetectPlayer(b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float32 fraction);
+
     void AttackPlayer();
 
     GuardState state = GUARD_IDLE;
