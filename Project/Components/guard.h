@@ -9,6 +9,7 @@ using namespace std;
 // Forward declaration
 class Ghost;
 class GuardWaypoint;
+class Player;
 
 enum GuardState
 {
@@ -20,14 +21,16 @@ enum GuardState
     GUARD_SCARED
 };
 
-struct GuardSchema : public Schema<GuardSchema, 5>
+struct GuardSchema : public Schema<GuardSchema, 10>
 {
-    DECLARE_BASE_SCHEMA(GuardSchema, 5);
+    DECLARE_BASE_SCHEMA(GuardSchema, 10);
 
     M(string, name) = "Po-po";
     M(float, moveForce) = 18.0f;
     M(float, maxSpeed) = 5.0f;
     M(string, initialWaypoint);
+    M(Vector2, direction) = {0, -1};
+    M(float, fov) = 135.0f;
 
 };
 
@@ -43,14 +46,26 @@ public:
 
     float MoveTowards(Vector2 target);
 
+    bool CanSeePlayer();
+
+    void AttackPlayer();
+
     GuardState state = GUARD_IDLE;
 
     vector<Ghost*> ghosts;
 
 private:
+    bool canSeePlayer = false;
+
     PhysicsBody* body = nullptr;
 
     GuardWaypoint* targetWaypoint = nullptr;
+
+    Player* player = nullptr;
+
+    Timer actionTimer;
+
+    Text* aiText = nullptr;
 
 };
 
