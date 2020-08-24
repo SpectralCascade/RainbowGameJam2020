@@ -5,7 +5,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(224, 640)",
+            "position" : "(224, 576)",
             "enabled" : 1
         }],
             "BoxCollider" : [{
@@ -139,7 +139,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(640, 640)",
+            "position" : "(640, 574)",
             "enabled" : 1
         }],
             "PhysicsBody" : [{
@@ -176,7 +176,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(256, 96)",
+            "position" : "(256, 32)",
             "enabled" : 1
         }],
             "Texture" : [{
@@ -254,7 +254,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(384, 800)",
+            "position" : "(384, 736)",
             "enabled" : 1
         }]
         },
@@ -268,7 +268,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(120, 320)",
+            "position" : "(120, 256)",
             "enabled" : 1
         }],
             "GuardWaypoint" : [{
@@ -324,7 +324,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(160, 128)",
+            "position" : "(160, 64)",
             "enabled" : 1
         }]
         },
@@ -343,7 +343,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(640, 320)",
+            "position" : "(640, 256)",
             "enabled" : 1
         }]
         },
@@ -357,7 +357,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(0, 0)",
+            "position" : "(0, -64)",
             "enabled" : 1
         }]
         },
@@ -523,7 +523,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(120, 320)",
+            "position" : "(120, 256)",
             "enabled" : 1
         }]
         },
@@ -574,7 +574,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(736, 448)",
+            "position" : "(736, 384)",
             "enabled" : 1
         }]
         },
@@ -588,7 +588,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(32, 320)",
+            "position" : "(32, 256)",
             "enabled" : 1
         }],
             "BoxCollider" : [{
@@ -676,7 +676,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(512, 224)",
+            "position" : "(512, 160)",
             "enabled" : 1
         }]
         },
@@ -727,7 +727,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(320, 416)",
+            "position" : "(320, 352)",
             "enabled" : 1
         }]
         },
@@ -741,7 +741,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(640, 736)",
+            "position" : "(640, 672)",
             "enabled" : 1
         }],
             "BoxCollider" : [{
@@ -823,7 +823,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(384, 480)",
+            "position" : "(384, 416)",
             "enabled" : 1
         }],
             "BoxCollider" : [{
@@ -916,7 +916,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(352, 128)",
+            "position" : "(352, 64)",
             "enabled" : 1
         }],
             "BoxCollider" : [{
@@ -1021,7 +1021,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(128, 224)",
+            "position" : "(128, 160)",
             "enabled" : 1
         }],
             "BoxCollider" : [{
@@ -1109,7 +1109,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(256, 96)",
+            "position" : "(256, 32)",
             "enabled" : 1
         }],
             "LoadScene" : [{
@@ -1127,7 +1127,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(544, 544)",
+            "position" : "(544, 480)",
             "enabled" : 1
         }],
             "BoxCollider" : [{
@@ -1215,7 +1215,7 @@
             "relative" : 1,
             "scale" : "(1, 1)",
             "rotation" : 0,
-            "position" : "(544, 480)",
+            "position" : "(544, 416)",
             "enabled" : 1
         }]
         },
