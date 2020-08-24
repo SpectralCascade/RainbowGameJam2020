@@ -32,7 +32,16 @@ void GuardWaypoint::Render(Renderer& renderer)
     Rect(GetTransform()->GetWorldPosition().x - 3, GetTransform()->GetWorldPosition().y - 3, 7, 7).DrawFilled(renderer, Ossium::Colors::MAGENTA);
     if (next != nullptr)
     {
-        Line(GetTransform()->GetWorldPosition(), next->GetTransform()->GetWorldPosition()).Draw(renderer, Ossium::Colors::YELLOW);
+        // Check that next is actually valid before rendering... should probably just use a shared_ptr or something.
+        Entity* located = entity->Find(nextEntityName);
+        if (located != nullptr && located->GetComponent<GuardWaypoint>() != nullptr)
+        {
+            Line(GetTransform()->GetWorldPosition(), next->GetTransform()->GetWorldPosition()).Draw(renderer, Ossium::Colors::YELLOW);
+        }
+        else
+        {
+            next = nullptr;
+        }
     }
 }
 

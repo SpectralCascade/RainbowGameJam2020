@@ -1,5 +1,7 @@
 #include "loadscene.h"
 
+REGISTER_COMPONENT(LoadScene);
+
 void LoadScene::OnLoadFinish()
 {
 #ifndef OSSIUM_EDITOR
@@ -8,7 +10,7 @@ void LoadScene::OnLoadFinish()
     {
         playerCollider = playerEnt->GetComponent<Collider>();
     }
-    sensor = GetComponent<PhysicsBody>();
+    sensor = entity->GetComponent<PhysicsBody>();
 #endif // OSSIUM_EDITOR
 }
 
@@ -16,7 +18,7 @@ void LoadScene::Update()
 {
     if (playerCollider != nullptr)
     {
-        for (b2ContactEdge* ce = myBody->GetContactList(); ce; ce = ce->next)
+        for (b2ContactEdge* ce = sensor->body->GetContactList(); ce; ce = ce->next)
         {
             b2Contact* contact = ce->contact;
             if (contact->GetFixtureA()->GetUserData() == playerCollider || contact->GetFixtureB()->GetUserData() == playerCollider)

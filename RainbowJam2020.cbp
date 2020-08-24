@@ -8,6 +8,7 @@
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/ossium" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Debug/" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -87,7 +88,7 @@
 				</Linker>
 			</Target>
 			<Target title="Debug (Editor)">
-				<Option output="bin/DebugEditor/RainbowJam2020" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/OssiumEditor" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -145,6 +146,8 @@
 		<Unit filename="Project/Components/guard.h" />
 		<Unit filename="Project/Components/guardwaypoint.cpp" />
 		<Unit filename="Project/Components/guardwaypoint.h" />
+		<Unit filename="Project/Components/loadscene.cpp" />
+		<Unit filename="Project/Components/loadscene.h" />
 		<Unit filename="Project/Components/mainmenu.cpp" />
 		<Unit filename="Project/Components/mainmenu.h" />
 		<Unit filename="Project/Components/player.cpp" />

@@ -26,7 +26,7 @@ public:
     void Update();
 
 private:
-    PhysicsBody* playerCollider = nullptr;
+    Collider* playerCollider = nullptr;
 
     PhysicsBody* sensor = nullptr;
 
