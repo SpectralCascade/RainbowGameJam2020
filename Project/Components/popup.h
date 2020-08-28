@@ -14,7 +14,7 @@ struct TextBoxMessage
 
 struct PopupSchema : public Schema<PopupSchema, 20>
 {
-    DECLARE_BASE_SCHEMA(GameControllerSchema, 20);
+    DECLARE_BASE_SCHEMA(PopupSchema, 20);
 
     // The delay in seconds per character of the text string shown.
     M(float, textBoxDelay) = 0.032;
@@ -41,7 +41,7 @@ private:
 
     void Setup();
 
-    bool shown = false;
+    bool shown = true;
 
     std::queue<TextBoxMessage> textBoxQueue;
 

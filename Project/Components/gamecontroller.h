@@ -13,17 +13,27 @@ struct GameControllerSchema : public Schema<GameControllerSchema, 20>
 
 };
 
-class GameController : public Component
+class GameController : public Component, public GameControllerSchema
 {
 public:
-    CONSTRUCT_SCHEMA(Component, GameController);
+    CONSTRUCT_SCHEMA(Component, GameControllerSchema);
     DECLARE_COMPONENT(Component, GameController);
+
+    void OnCreate();
+
+    void OnDestroy();
 
     void OnLoadFinish();
 
     void Update();
 
     Popup* popup = nullptr;
+
+private:
+    bool mouseWasPressed = false;
+
+    InputContext gameInput;
+    MouseHandler* mouse = nullptr;
 
 };
 

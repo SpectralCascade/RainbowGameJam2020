@@ -15,6 +15,10 @@ void Popup::OnLoadFinish()
     textBoxIconLeft = found != nullptr ? found->GetComponent<Texture>() : nullptr;
     found = entity->Find("IconRight", entity);
     textBoxIconRight = found != nullptr ? found->GetComponent<Texture>() : nullptr;
+
+#ifndef OSSIUM_EDITOR
+    Hide();
+#endif // OSSIUM_EDITOR
 }
 
 void Popup::QueueMessage(string text, string iconLeftPath, string iconRightPath)
@@ -27,8 +31,6 @@ void Popup::Show()
 {
     if (!shown && !textBoxQueue.empty())
     {
-        textBoxIconLeft->SetAlphaMod(255);
-        textBoxIconRight->SetAlphaMod(255);
         textBoxBackground->SetAlphaMod(255);
         Setup();
         shown = true;
@@ -39,11 +41,8 @@ void Popup::Hide()
 {
     if (shown)
     {
-        textBoxIconLeft->SetAlphaMod(0);
-        textBoxIconRight->SetAlphaMod(0);
         textBoxBackground->SetAlphaMod(0);
-        textBoxText->text = "";
-        textBoxText->dirty = true;
+        Setup();
         shown = false;
     }
 }
@@ -52,17 +51,25 @@ void Popup::Setup()
 {
     textBoxText->text = "";
     textBoxText->dirty = true;
-    textBoxIconLeft->SetSource(GetService<ResourceController>()->Get<Image>(textBoxQueue.front().iconLeftPath, *GetService<Renderer>()));
-    textBoxIconRight->SetSource(GetService<ResourceController>()->Get<Image>(textBoxQueue.front().iconRightPath, *GetService<Renderer>()));
+    if (!textBoxQueue.empty())
+    {
+        textBoxIconLeft->SetSource(GetService<ResourceController>()->Get<Image>(textBoxQueue.front().iconLeftPath, *GetService<Renderer>()));
+        textBoxIconRight->SetSource(GetService<ResourceController>()->Get<Image>(textBoxQueue.front().iconRightPath, *GetService<Renderer>()));
+    }
+    else
+    {
+        textBoxIconLeft->SetSource(nullptr);
+        textBoxIconRight->SetSource(nullptr);
+    }
     if (textBoxIconLeft->GetSource() == nullptr)
     {
-        textBoxIconLeft->SetWidth(0);
-        textBoxIconLeft->SetHeight(0);
+        textBoxIconLeft->width = 0;
+        textBoxIconLeft->height = 0;
     }
     if (textBoxIconRight->GetSource() == nullptr)
     {
-        textBoxIconRight->SetWidth(0);
-        textBoxIconRight->SetHeight(0);
+        textBoxIconRight->width = 0;
+        textBoxIconRight->height = 0;
     }
     seconds = 0;
 }
@@ -90,25 +97,28 @@ void Popup::Update()
                 Setup();
             }
         }
-        else if (goToNextMessage)
+        else if (goToNextMessage && !textBoxQueue.front().text.empty())
         {
-            charsWritten = textBoxQueue.front().text.size();
+            charsWritten = textBoxQueue.front().text.size() - 1;
         }
 
-        if (textBoxQueue.empty())
+        if (!textBoxQueue.empty())
         {
-            // Hide the text box
+            if (charsWritten < textBoxQueue.front().text.size() && seconds > textBoxDelay)
+            {
+                charsWritten++;
+                textBoxText->text = textBoxQueue.front().text.substr(0, charsWritten);
+                textBoxText->dirty = true;
+                seconds = 0;
+            }
+            seconds += delta.Time();
+        }
+        else
+        {
             Hide();
         }
-        else if (charsWritten < textBoxQueue.front().text.size() && seconds > textBoxDelay)
-        {
-            charsWritten++;
-            textBoxText->text = textBoxQueue.front().text.substr(0, charsWritten);
-            textBoxText->dirty = true;
-            seconds = 0;
-        }
-        goToNextMessage = false;
-        seconds += delta.Time();
     }
+    goToNextMessage = false;
+    delta.Update();
 }
 

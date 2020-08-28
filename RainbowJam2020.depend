@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1598212902 source:c:\users\2013b\git\rainbowgamejam2020\main.cpp
+1598637588 source:c:\users\2013b\git\rainbowgamejam2020\main.cpp
 	<Ossium.h>
 	<OssiumEditor.h>
 
@@ -906,13 +906,14 @@
 1598032235 c:\users\2013b\git\rainbowgamejam2020\project\components\collider.h
 	<Ossium.h>
 
-1598044965 source:c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.cpp
+1598637267 source:c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.cpp
 	"gamecontroller.h"
+	"popup.h"
 
-1597875387 c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.h
+1598636951 c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.h
 	<Ossium.h>
 
-1598216439 source:c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.cpp
+1598619062 source:c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.cpp
 	"ghost.h"
 	"guard.h"
 
@@ -966,7 +967,7 @@
 1598190687 c:\users\2013b\git\rainbowgamejam2020\project\components\guard.h
 	<Ossium.h>
 
-1598618582 source:c:\users\2013b\git\rainbowgamejam2020\project\components\guard.cpp
+1598622863 source:c:\users\2013b\git\rainbowgamejam2020\project\components\guard.cpp
 	"guard.h"
 	"guardwaypoint.h"
 	"player.h"
@@ -976,4 +977,10 @@
 
 1598226886 c:\users\2013b\git\rainbowgamejam2020\project\components\loadscene.h
 	<Ossium.h>
+
+1598637533 c:\users\2013b\git\rainbowgamejam2020\project\components\popup.h
+	<Ossium.h>
+
+1598636650 source:c:\users\2013b\git\rainbowgamejam2020\project\components\popup.cpp
+	"popup.h"
 
