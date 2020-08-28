@@ -47,6 +47,11 @@ void Popup::Hide()
     }
 }
 
+bool Popup::IsShown()
+{
+    return shown;
+}
+
 void Popup::Setup()
 {
     textBoxText->text = "";

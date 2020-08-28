@@ -35,6 +35,8 @@ public:
 
     void Update();
 
+    bool IsShown();
+
 private:
     void Show();
     void Hide();

@@ -38,5 +38,8 @@ void GameController::Update()
     {
         popup->NextMessage();
     }
+    // Freeze physics
+    GetService<PhysicsWorld>()->SetFrozen(popup->IsShown());
+
     mouseWasPressed = mouse->LeftPressed();
 }
