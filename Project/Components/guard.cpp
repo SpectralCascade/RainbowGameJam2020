@@ -51,32 +51,30 @@ void Guard::Update()
     // If so, try and raycast to the player. If blocked, cannot see the player, so do nothing.
     if (direction.Rotation() > angleToPlayer - (fov / 2.0f) && direction.Rotation() < angleToPlayer + (fov / 2.0f))
     {
-        Vector2 origin = GetTransform()->GetWorldPosition();
-        // Convert to metres
-        origin.x = PTM(origin.x);
-        origin.y = PTM(origin.y);
+        Point origin(PTM(GetTransform()->GetWorldPosition()));
+        Point playerPosMetres(PTM(player->GetTransform()->GetWorldPosition()));
 
-        Log.Info("Guard raycasting for player...");
-
+        // As soon as a collider is hit which is *not* the player,
+        canSeePlayer = true;
         Physics::OnRayHit onHit = Physics::OnRayHit([&] (b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float32 fraction) {
             if (fixture->GetBody() == body->body)
             {
                 // Ignore own body
-                Log.Info("Ignoring own body, continuing raycast...");
-                return 1.0f;
+                return -1.0f;
             }
-            else if (fixture->GetUserData() != nullptr)
+            Collider* hit = (Collider*)fixture->GetUserData();
+            if (hit != nullptr && hit->GetEntity() != player->GetEntity())
             {
-                Collider* collider = (Collider*)fixture->GetUserData();
-                // Is the collider the player or not?
-                canSeePlayer = collider->GetEntity()->GetComponent<Player>() == player;
-                Log.Info("Found collider on entity named '{0}'. Is player? {1}", collider->GetEntity()->name, canSeePlayer ? "yes" : "no");
+                // Terminate raycast, there's something between this guard and the player blocking line of sight.
+                canSeePlayer = false;
+                return 0.0f;
             }
-            // Terminate raycast
-            return 0.0f;
+            // Ignore, probably hit the player.
+            return -1.0f;
         });
 
-        world->RayCast(Ray(origin, playerDiff.Normalized()), &onHit);
+        // Raycast directly from the fixture to the player.
+        world->RayCast(origin, playerPosMetres, &onHit);
 
     }
 
@@ -104,8 +102,8 @@ void Guard::Update()
         }
         break;
     case GUARD_SEARCH:
-        // Search for 10 seconds after losing sight of the player.
-        if (actionTimer.GetTicks() > 10000)
+        // Search for a few seconds after losing sight of the player.
+        if (actionTimer.GetTicks() > 4000)
         {
             if (targetWaypoint != nullptr)
             {

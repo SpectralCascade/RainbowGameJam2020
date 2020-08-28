@@ -3,7 +3,7 @@
     "openScenes" : [{
     "opened" : 1,
     "loaded" : 1,
-    "path" : "assets/scenes/MainGame.rawr",
-    "name" : "MainGame"
+    "path" : "C:\Users\2013b\Git\RainbowGameJam2020\bin\Debug\assets\scenes\UI.rawr",
+    "name" : "UI"
 }]
 }

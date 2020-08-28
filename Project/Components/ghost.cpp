@@ -33,21 +33,21 @@ void Ghost::Update()
     {
     case GHOST_IDLE:
         // Once player is close enough, seek player
-        if ((player->GetTransform()->GetWorldPosition() - GetTransform()->GetWorldPosition()).Length() < 100.0f)
+        if ((player->GetTransform()->GetWorldPosition() - GetTransform()->GetWorldPosition()).Length() < 80.0f)
         {
             state = GHOST_SEEK_PLAYER;
         }
         break;
     case GHOST_SEEK_PLAYER:
-        SeekTarget(player->GetTransform()->GetWorldPosition(), 130);
+        SeekTarget(player->GetTransform()->GetWorldPosition(), 60);
         break;
     case GHOST_CIRCLE_PLAYER:
-        CircleTarget(player->GetTransform()->GetWorldPosition(), Vector2(40, 100));
+        CircleTarget(player->GetTransform()->GetWorldPosition(), Vector2(40, 60));
         break;
     case GHOST_SEEK_GUARD:
         if (guardTarget != nullptr)
         {
-            SeekTarget(guardTarget->GetTransform()->GetWorldPosition(), 130);
+            SeekTarget(guardTarget->GetTransform()->GetWorldPosition(), 60);
         }
         else
         {
@@ -60,7 +60,7 @@ void Ghost::Update()
         }
         else
         {
-            CircleTarget(guardTarget->GetTransform()->GetWorldPosition(), Vector2(40, 100));
+            CircleTarget(guardTarget->GetTransform()->GetWorldPosition(), Vector2(40, 60));
         }
         break;
     }

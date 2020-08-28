@@ -152,6 +152,8 @@
 		<Unit filename="Project/Components/mainmenu.h" />
 		<Unit filename="Project/Components/player.cpp" />
 		<Unit filename="Project/Components/player.h" />
+		<Unit filename="Project/Components/popup.cpp" />
+		<Unit filename="Project/Components/popup.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
