@@ -1,8 +1,10 @@
 #include "guard.h"
 #include "guardwaypoint.h"
 #include "player.h"
+#include "gamecontroller.h"
 
 using namespace Ossium;
+using namespace std;
 
 REGISTER_COMPONENT(Guard);
 
@@ -19,17 +21,27 @@ void Guard::OnLoadFinish()
             state = GUARD_PATROL;
         }
     }
-    Entity* playerEnt = entity->Find("PlayerController");
-    if (playerEnt != nullptr)
+    Entity* found = entity->Find("PlayerController");
+    if (found != nullptr)
     {
-        player = playerEnt->GetComponent<Player>();
+        player = found->GetComponent<Player>();
     }
-    Entity* textEnt = entity->Find("text", entity);
-    if (textEnt != nullptr)
+    found = entity->Find("text", entity);
+    if (found != nullptr)
     {
-        aiText = textEnt->GetComponent<Text>();
+        aiText = found->GetComponent<Text>();
     }
-    actionTimer.Stop();
+    found = entity->Find("alertFill", entity);
+    if (found != nullptr)
+    {
+        alertBar = found->GetComponent<Texture>();
+    }
+    found = entity->Find("alertFillBG", entity);
+    if (found != nullptr)
+    {
+        alertBar = found->GetComponent<Texture>();
+    }
+    alertTimer.Stop();
 }
 
 bool Guard::CanSeePlayer()
@@ -95,19 +107,10 @@ void Guard::Update()
             }
         }
     case GUARD_IDLE:
-        if (canSeePlayer)
-        {
-            // Go after the player! Pretty dumb though... need some path finding.
-            AttackPlayer();
-        }
-        break;
-    case GUARD_SEARCH:
-        // Search for a few seconds after losing sight of the player.
-        if (actionTimer.GetTicks() > 4000)
+        if (!alertTimer.IsPaused() && alertTimer.GetTicks() >= searchTime)
         {
             if (targetWaypoint != nullptr)
             {
-                // TODO: Find way back to waypoint.
                 state = GUARD_PATROL;
             }
             else
@@ -120,19 +123,25 @@ void Guard::Update()
                 aiText->layout.mainColor = Colors::TRANSPARENT;
                 aiText->dirty = true;
             }
+            alertTimer.Pause();
+            alertLevel = 0;
         }
         else if (canSeePlayer)
         {
             // Player spotted again.
-            AttackPlayer();
+            Alert();
+        }
+        else
+        {
+            alertLevel = Utilities::Clamp(((float)searchTime - (float)alertTimer.GetTicks()) / (float)searchTime);
         }
         break;
-    case GUARD_ATTACK:
+    case GUARD_ALERT:
         if (!canSeePlayer)
         {
             // Can no longer see player, start searching
-            actionTimer.Start();
-            state = GUARD_SEARCH;
+            alertTimer.Start();
+            state = targetWaypoint != nullptr ? GUARD_PATROL : GUARD_IDLE;
             if (aiText != nullptr && aiText->text != "?")
             {
                 aiText->text = "?";
@@ -142,8 +151,24 @@ void Guard::Update()
         }
         else
         {
-            // Move towards the player.
-            MoveTowards(player->GetTransform()->GetWorldPosition());
+            // Increase alertness
+            alertLevel = Utilities::Clamp((float)alertTimer.GetTicks() / (float)alertTime);
+            if (alertLevel >= 1.0f)
+            {
+                // Find the game controller
+                for (auto itr : GetService<ResourceController>()->GetAll<Scene>())
+                {
+                    Scene* scene = (Scene*)itr.second;
+                    if (scene != entity->GetScene())
+                    {
+                        Entity* found = scene->Find("GameController");
+                        if (found != nullptr)
+                        {
+                            found->GetComponent<GameController>()->GameOver();
+                        }
+                    }
+                }
+            }
         }
         break;
     case GUARD_RUN_AWAY:
@@ -153,11 +178,22 @@ void Guard::Update()
         // TODO
         break;
     }
+
+    if (alertBar != nullptr)
+    {
+        alertBar->SetRenderWidth(alertLevel);
+        if (alertBarBackground != nullptr)
+        {
+            alertBarBackground->SetRenderWidth(alertLevel > 0.0f ? 1.0f : 0.0f);
+        }
+    }
+
 }
 
-void Guard::AttackPlayer()
+void Guard::Alert()
 {
-    state = GUARD_ATTACK;
+    alertTimer.Start();
+    state = GUARD_ALERT;
     if (aiText != nullptr && aiText->text != "!")
     {
         aiText->text = "!";

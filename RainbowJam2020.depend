@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1598639923 source:c:\users\2013b\git\rainbowgamejam2020\main.cpp
+1598641348 source:c:\users\2013b\git\rainbowgamejam2020\main.cpp
 	<Ossium.h>
 	<OssiumEditor.h>
 
@@ -108,7 +108,7 @@
 	"lrucache.h"
 	"../Core/helpermacros.h"
 
-1598052492 c:\users\2013b\git\ossium\engine\src\core\resourcecontroller.h
+1598721589 c:\users\2013b\git\ossium\engine\src\core\resourcecontroller.h
 	<string.h>
 	<unordered_map>
 	"stringconvert.h"
@@ -893,7 +893,7 @@
 
 1597509020 c:\users\2013b\git\ossium\engine\src\core\schematype.h
 
-1598214130 source:c:\users\2013b\git\rainbowgamejam2020\project\components\mainmenu.cpp
+1598726142 source:c:\users\2013b\git\rainbowgamejam2020\project\components\mainmenu.cpp
 	"mainmenu.h"
 	"fitscreen.h"
 
@@ -906,11 +906,11 @@
 1598032235 c:\users\2013b\git\rainbowgamejam2020\project\components\collider.h
 	<Ossium.h>
 
-1598637267 source:c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.cpp
+1598726794 source:c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.cpp
 	"gamecontroller.h"
 	"popup.h"
 
-1598636951 c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.h
+1598726778 c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.h
 	<Ossium.h>
 
 1598619062 source:c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.cpp
@@ -950,7 +950,7 @@
 1598140307 c:\users\2013b\git\rainbowgamejam2020\project\components\player.h
 	<Ossium.h>
 
-1598042251 c:\users\2013b\git\ossium\engine\src\core\resource.h
+1598718462 c:\users\2013b\git\ossium\engine\src\core\resource.h
 
 1598110761 source:c:\users\2013b\git\rainbowgamejam2020\project\components\camera.cpp
 	"camera.h"
@@ -964,15 +964,16 @@
 1598140324 c:\users\2013b\git\rainbowgamejam2020\project\components\guardwaypoint.h
 	<Ossium.h>
 
-1598190687 c:\users\2013b\git\rainbowgamejam2020\project\components\guard.h
+1598719356 c:\users\2013b\git\rainbowgamejam2020\project\components\guard.h
 	<Ossium.h>
 
-1598622863 source:c:\users\2013b\git\rainbowgamejam2020\project\components\guard.cpp
+1598719613 source:c:\users\2013b\git\rainbowgamejam2020\project\components\guard.cpp
 	"guard.h"
 	"guardwaypoint.h"
 	"player.h"
+	"gamecontroller.h"
 
-1598227667 source:c:\users\2013b\git\rainbowgamejam2020\project\components\loadscene.cpp
+1598659297 source:c:\users\2013b\git\rainbowgamejam2020\project\components\loadscene.cpp
 	"loadscene.h"
 
 1598226886 c:\users\2013b\git\rainbowgamejam2020\project\components\loadscene.h

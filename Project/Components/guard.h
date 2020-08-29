@@ -15,8 +15,7 @@ enum GuardState
 {
     GUARD_IDLE = 0,
     GUARD_PATROL,
-    GUARD_SEARCH,
-    GUARD_ATTACK,
+    GUARD_ALERT,
     GUARD_RUN_AWAY,
     GUARD_SCARED
 };
@@ -31,6 +30,10 @@ struct GuardSchema : public Schema<GuardSchema, 10>
     M(string, initialWaypoint);
     M(Vector2, direction) = {0, -1};
     M(float, fov) = 135.0f;
+    // Rate at which the 'alert' timer cools down each frame, in milliseconds
+    M(Uint32, searchTime) = 10;
+    // How long it takes before the guard is alerted and it's game over.
+    M(Uint32, alertTime) = 500;
 
 };
 
@@ -51,13 +54,15 @@ public:
     // Raycast callback to detect the player
     float32 DetectPlayer(b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float32 fraction);
 
-    void AttackPlayer();
+    void Alert();
 
     GuardState state = GUARD_IDLE;
 
     vector<Ghost*> ghosts;
 
 private:
+    float alertLevel = 0.0f;
+
     bool canSeePlayer = false;
 
     PhysicsBody* body = nullptr;
@@ -66,9 +71,12 @@ private:
 
     Player* player = nullptr;
 
-    Timer actionTimer;
+    Timer alertTimer;
 
     Text* aiText = nullptr;
+
+    Texture* alertBar = nullptr;
+    Texture* alertBarBackground = nullptr;
 
 };
 

@@ -87,7 +87,8 @@ void MainMenu::GoPlay()
 #ifndef OSSIUM_EDITOR
     // Load the main game scene.
     entity->GetScene()->ClearSafe();
-    GetService<ResourceController>()->LoadAndInit<Scene>("assets/scenes/MainGame.rawr", entity->GetScene()->GetServices());
+    GetService<ResourceController>()->LoadAndInit<Scene>("assets/scenes/level_1.rawr", entity->GetScene()->GetServices());
+    GetService<ResourceController>()->LoadAndInit<Scene>("assets/scenes/UI.rawr", entity->GetScene()->GetServices());
 #else
     Log.Info("Play button pressed!");
 #endif // OSSIUM_EDITOR

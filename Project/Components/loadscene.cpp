@@ -16,7 +16,7 @@ void LoadScene::OnLoadFinish()
 
 void LoadScene::Update()
 {
-    if (playerCollider != nullptr)
+    if (playerCollider != nullptr && sensor != nullptr)
     {
         for (b2ContactEdge* ce = sensor->body->GetContactList(); ce; ce = ce->next)
         {
