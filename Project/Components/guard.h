@@ -71,7 +71,11 @@ private:
 
     Player* player = nullptr;
 
-    Timer alertTimer;
+    Clock alertClock;
+
+    Uint32 alertStartTime = 0;
+
+    Delta delta;
 
     Text* aiText = nullptr;
 

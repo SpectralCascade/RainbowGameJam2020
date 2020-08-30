@@ -35,13 +35,14 @@ void Guard::OnLoadFinish()
     if (found != nullptr)
     {
         alertBar = found->GetComponent<Texture>();
+        alertBar->SetRenderWidth(0);
     }
     found = entity->Find("alertFillBG", entity);
     if (found != nullptr)
     {
-        alertBar = found->GetComponent<Texture>();
+        alertBarBackground = found->GetComponent<Texture>();
+        alertBarBackground->SetRenderWidth(0);
     }
-    alertTimer.Stop();
 }
 
 bool Guard::CanSeePlayer()
@@ -107,7 +108,7 @@ void Guard::Update()
             }
         }
     case GUARD_IDLE:
-        if (!alertTimer.IsPaused() && alertTimer.GetTicks() >= searchTime)
+        if (!alertClock.IsPaused() && alertClock.GetTime() - alertStartTime >= searchTime)
         {
             if (targetWaypoint != nullptr)
             {
@@ -123,8 +124,8 @@ void Guard::Update()
                 aiText->layout.mainColor = Colors::TRANSPARENT;
                 aiText->dirty = true;
             }
-            alertTimer.Pause();
             alertLevel = 0;
+            alertClock.SetPaused(true);
         }
         else if (canSeePlayer)
         {
@@ -133,14 +134,14 @@ void Guard::Update()
         }
         else
         {
-            alertLevel = Utilities::Clamp(((float)searchTime - (float)alertTimer.GetTicks()) / (float)searchTime);
+            alertLevel = max(0.0f, alertLevel - (delta.Time() * (1000.0f / (float)searchTime)));
         }
         break;
     case GUARD_ALERT:
         if (!canSeePlayer)
         {
             // Can no longer see player, start searching
-            alertTimer.Start();
+            alertStartTime = alertClock.GetTime();
             state = targetWaypoint != nullptr ? GUARD_PATROL : GUARD_IDLE;
             if (aiText != nullptr && aiText->text != "?")
             {
@@ -152,7 +153,7 @@ void Guard::Update()
         else
         {
             // Increase alertness
-            alertLevel = Utilities::Clamp((float)alertTimer.GetTicks() / (float)alertTime);
+            alertLevel = min(1.0f, alertLevel + (delta.Time() * (1000.0f / (float)alertTime)));
             if (alertLevel >= 1.0f)
             {
                 // Find the game controller
@@ -165,6 +166,7 @@ void Guard::Update()
                         if (found != nullptr)
                         {
                             found->GetComponent<GameController>()->GameOver();
+                            break;
                         }
                     }
                 }
@@ -188,11 +190,27 @@ void Guard::Update()
         }
     }
 
+    if (body != nullptr)
+    {
+        if (body->body->GetLinearVelocity().x < 0)
+        {
+            entity->GetComponent<Texture>()->SetFlip(SDL_FLIP_NONE);
+        }
+        else
+        {
+            entity->GetComponent<Texture>()->SetFlip(SDL_FLIP_HORIZONTAL);
+        }
+    }
+
+    delta.Update();
+    alertClock.Update(delta.Time());
+
 }
 
 void Guard::Alert()
 {
-    alertTimer.Start();
+    alertClock.SetPaused(false);
+    alertStartTime = alertClock.GetTime();
     state = GUARD_ALERT;
     if (aiText != nullptr && aiText->text != "!")
     {
