@@ -108,7 +108,7 @@
 	"lrucache.h"
 	"../Core/helpermacros.h"
 
-1598721589 c:\users\2013b\git\ossium\engine\src\core\resourcecontroller.h
+1598804811 c:\users\2013b\git\ossium\engine\src\core\resourcecontroller.h
 	<string.h>
 	<unordered_map>
 	"stringconvert.h"
@@ -175,7 +175,7 @@
 	"coremaths.h"
 	"ecs.h"
 
-1598225982 c:\users\2013b\git\ossium\engine\src\core\ecs.h
+1598809002 c:\users\2013b\git\ossium\engine\src\core\ecs.h
 	<vector>
 	<string.h>
 	<unordered_map>
@@ -893,9 +893,11 @@
 
 1597509020 c:\users\2013b\git\ossium\engine\src\core\schematype.h
 
-1598726968 source:c:\users\2013b\git\rainbowgamejam2020\project\components\mainmenu.cpp
+1598810002 source:c:\users\2013b\git\rainbowgamejam2020\project\components\mainmenu.cpp
 	"mainmenu.h"
 	"fitscreen.h"
+	"gamecontroller.h"
+	"global.h"
 
 1597881131 c:\users\2013b\git\rainbowgamejam2020\project\components\mainmenu.h
 	<Ossium.h>
@@ -906,11 +908,12 @@
 1598032235 c:\users\2013b\git\rainbowgamejam2020\project\components\collider.h
 	<Ossium.h>
 
-1598726794 source:c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.cpp
+1598822423 source:c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.cpp
 	"gamecontroller.h"
 	"popup.h"
+	"global.h"
 
-1598726778 c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.h
+1598822182 c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.h
 	<Ossium.h>
 
 1598792917 source:c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.cpp
@@ -943,9 +946,10 @@
 1598113625 c:\users\2013b\git\ossium\engine\src\components\rigidcircle.h
 	"collider.h"
 
-1598140340 source:c:\users\2013b\git\rainbowgamejam2020\project\components\player.cpp
+1598802879 source:c:\users\2013b\git\rainbowgamejam2020\project\components\player.cpp
 	"player.h"
 	"ghost.h"
+	"gamecontroller.h"
 
 1598140307 c:\users\2013b\git\rainbowgamejam2020\project\components\player.h
 	<Ossium.h>
@@ -964,17 +968,18 @@
 1598140324 c:\users\2013b\git\rainbowgamejam2020\project\components\guardwaypoint.h
 	<Ossium.h>
 
-1598790818 c:\users\2013b\git\rainbowgamejam2020\project\components\guard.h
+1598799292 c:\users\2013b\git\rainbowgamejam2020\project\components\guard.h
 	<Ossium.h>
 
-1598791623 source:c:\users\2013b\git\rainbowgamejam2020\project\components\guard.cpp
+1598803033 source:c:\users\2013b\git\rainbowgamejam2020\project\components\guard.cpp
 	"guard.h"
 	"guardwaypoint.h"
 	"player.h"
 	"gamecontroller.h"
 
-1598659297 source:c:\users\2013b\git\rainbowgamejam2020\project\components\loadscene.cpp
+1598810446 source:c:\users\2013b\git\rainbowgamejam2020\project\components\loadscene.cpp
 	"loadscene.h"
+	"global.h"
 
 1598226886 c:\users\2013b\git\rainbowgamejam2020\project\components\loadscene.h
 	<Ossium.h>
@@ -982,6 +987,13 @@
 1598640621 c:\users\2013b\git\rainbowgamejam2020\project\components\popup.h
 	<Ossium.h>
 
-1598640633 source:c:\users\2013b\git\rainbowgamejam2020\project\components\popup.cpp
+1598822946 source:c:\users\2013b\git\rainbowgamejam2020\project\components\popup.cpp
 	"popup.h"
+
+1598816451 source:c:\users\2013b\git\rainbowgamejam2020\project\components\global.cpp
+	"global.h"
+	"popup.h"
+	"gamecontroller.h"
+
+1598816439 c:\users\2013b\git\rainbowgamejam2020\project\components\global.h
 

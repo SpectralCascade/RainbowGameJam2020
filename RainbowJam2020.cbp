@@ -143,6 +143,8 @@
 		<Unit filename="Project/Components/gamecontroller.h" />
 		<Unit filename="Project/Components/ghost.cpp" />
 		<Unit filename="Project/Components/ghost.h" />
+		<Unit filename="Project/Components/global.cpp" />
+		<Unit filename="Project/Components/global.h" />
 		<Unit filename="Project/Components/guard.cpp" />
 		<Unit filename="Project/Components/guard.h" />
 		<Unit filename="Project/Components/guardwaypoint.cpp" />

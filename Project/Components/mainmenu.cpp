@@ -1,11 +1,14 @@
 #include "mainmenu.h"
 #include "fitscreen.h"
+#include "gamecontroller.h"
+#include "global.h"
 
 REGISTER_COMPONENT(MainMenu);
 
 void MainMenu::OnLoadFinish()
 {
     Component::OnLoadFinish();
+    SceneMenu = entity->GetScene();
     // Component references *did* work. But now they don't. So I'll do this instead :D
     inputGUI = entity->AddComponentOnce<InputGUI>();
     Entity* target = entity->GetScene()->Find("Play");
@@ -85,10 +88,14 @@ void MainMenu::CleanupHandles()
 void MainMenu::GoPlay()
 {
 #ifndef OSSIUM_EDITOR
-    // Load the main game scene.
-    entity->GetScene()->ClearSafe();
-    GetService<ResourceController>()->LoadAndInit<Scene>("assets/scenes/level_1.rawr", entity->GetScene()->GetServices());
-    GetService<ResourceController>()->LoadAndInit<Scene>("assets/scenes/UI.rawr", entity->GetScene()->GetServices());
+    // Clean the menu scene
+    SceneMenu->ClearSafe();
+    // Load UI
+    SceneUI = GetService<ResourceController>()->Get<Scene>("assets/scenes/UI.rawr", entity->GetScene()->GetServices());
+    SceneUI->LoadSafe(SceneUI->GetFilePath());
+    // Load the world scene
+    SceneWorld = GetService<ResourceController>()->Get<Scene>("assets/scenes/level_1.rawr", entity->GetScene()->GetServices());
+    SceneWorld->LoadSafe("assets/scenes/level_1.rawr");
 #else
     Log.Info("Play button pressed!");
 #endif // OSSIUM_EDITOR

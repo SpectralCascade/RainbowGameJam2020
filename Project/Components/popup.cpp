@@ -58,8 +58,14 @@ void Popup::Setup()
     textBoxText->dirty = true;
     if (!textBoxQueue.empty())
     {
-        textBoxIconLeft->SetSource(GetService<ResourceController>()->Get<Image>(textBoxQueue.front().iconLeftPath, *GetService<Renderer>()));
-        textBoxIconRight->SetSource(GetService<ResourceController>()->Get<Image>(textBoxQueue.front().iconRightPath, *GetService<Renderer>()));
+        if (!textBoxQueue.front().iconLeftPath.empty())
+        {
+            textBoxIconLeft->SetSource(GetService<ResourceController>()->Get<Image>(textBoxQueue.front().iconLeftPath, *GetService<Renderer>()));
+        }
+        if (!textBoxQueue.front().iconRightPath.empty())
+        {
+            textBoxIconRight->SetSource(GetService<ResourceController>()->Get<Image>(textBoxQueue.front().iconRightPath, *GetService<Renderer>()));
+        }
     }
     else
     {

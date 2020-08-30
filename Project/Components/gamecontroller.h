@@ -28,7 +28,7 @@ public:
 
     void Update();
 
-    void GameOver();
+    void GameOver(bool win = false);
 
     void RestartLevel();
 
@@ -37,6 +37,8 @@ public:
     Popup* popup = nullptr;
 
 private:
+    bool doRestart = false;
+
     void CleanupHandles();
 
     void HideGameOver();
@@ -47,8 +49,6 @@ private:
 
     int playClickHandle = -1;
     int quitClickHandle = -1;
-
-    Scene* worldScene = nullptr;
 
     Text* gameOverText = nullptr;
     Button* restartLevelButton = nullptr;

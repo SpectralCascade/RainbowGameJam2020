@@ -183,7 +183,7 @@ void Guard::Update()
             alertBarBackground->SetRenderWidth(alertLevel > 0.0f ? 1.0f : 0.0f);
         }
 
-        if (aiText != nullptr && alertLevel <= 0.0f)
+        if (aiText != nullptr && alertLevel <= 0.0f && aiText->text != "!")
         {
             aiText->text = " ";
             aiText->layout.mainColor = Colors::TRANSPARENT;
@@ -191,16 +191,13 @@ void Guard::Update()
         }
     }
 
-    if (body != nullptr)
+    if (direction.x < 0)
     {
-        if (body->body->GetLinearVelocity().x < 0)
-        {
-            entity->GetComponent<Texture>()->SetFlip(SDL_FLIP_NONE);
-        }
-        else
-        {
-            entity->GetComponent<Texture>()->SetFlip(SDL_FLIP_HORIZONTAL);
-        }
+        entity->GetComponent<Texture>()->SetFlip(SDL_FLIP_NONE);
+    }
+    else if (direction.x > 0)
+    {
+        entity->GetComponent<Texture>()->SetFlip(SDL_FLIP_HORIZONTAL);
     }
 
     delta.Update();

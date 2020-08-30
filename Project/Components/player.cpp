@@ -1,5 +1,6 @@
 #include "player.h"
 #include "ghost.h"
+#include "gamecontroller.h"
 
 REGISTER_COMPONENT(Player);
 
@@ -25,7 +26,7 @@ void Player::OnLoadFinish()
     Entity* found = nullptr;
     for (auto itr : GetService<ResourceController>()->GetAll<Scene>())
     {
-        found = itr.second->Find("GUI");
+        found = ((Scene*)itr.second)->Find("GUI");
         if (found != nullptr)
         {
             GameController* gc = found->GetComponent<GameController>();

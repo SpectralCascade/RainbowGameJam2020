@@ -1,5 +1,6 @@
 #include "gamecontroller.h"
 #include "popup.h"
+#include "global.h"
 
 REGISTER_COMPONENT(GameController);
 
@@ -11,6 +12,8 @@ void GameController::OnDestroy()
 void GameController::OnLoadFinish()
 {
     ParentType::OnLoadFinish();
+
+    totalGhosts = 0;
 
     // Hook up components
     Entity* found = entity->Find("DialogueBox");
@@ -64,8 +67,8 @@ void GameController::OnLoadFinish()
         popup->QueueMessage("<color=#00AA00><b>Ghost:</b></color> Hey, you. You're finally awake.", "", "assets/gayghost.png");
         popup->QueueMessage("<color=#7F00FF><b>You:</b></color> Huh..? Wha... who are you? Where am I?!", "assets/playerHead.png");
         popup->QueueMessage("<color=#00AA00><b>Ghost:</b></color> It's me! We met at spirit con!? But uh... we got busted.", "", "assets/gayghost.png");
-        popup->QueueMessage("<color=#7F00FF><b>You:</b></color> Oh no. They sent <i>them</i> in? How did you get here?", "assets/playerHead.png");
-        popup->QueueMessage("<color=#00AA00><b>Ghost:</b></color> Yep. They built this place on top of a resting ground though... so it wasn't too difficult to find you!", "", "assets/gayghost.png");
+        popup->QueueMessage("<color=#7F00FF><b>You:</b></color> Oh, I recall now... how did you get here?", "assets/playerHead.png");
+        popup->QueueMessage("<color=#00AA00><b>Ghost:</b></color> They built this place on top of a resting ground... so it wasn't too difficult to find you!", "", "assets/gayghost.png");
         popup->QueueMessage("<color=#00AA00><b>Ghost:</b></color> We've gotta get you outta here anyway. Some friends are with me in the next room - we'll get you to safety.", "", "assets/gayghost.png");
         popup->QueueMessage("<color=#00AA00><b>Ghost:</b></color> Just be sure not to let the guard catch you on your way out!", "", "assets/gayghost.png");
         popup->QueueMessage("Use the arrow keys to move. Avoid guards, or you'll be caught and have to try again!");
@@ -73,7 +76,7 @@ void GameController::OnLoadFinish()
     }
     if (!nextLevel.empty())
     {
-        worldScene = GetService<ResourceController>()->Get<Scene>(nextLevel, entity->GetScene()->GetServices());
+        SceneWorld = GetService<ResourceController>()->Get<Scene>(nextLevel, entity->GetScene()->GetServices());
     }
 
     HideGameOver();
@@ -99,20 +102,39 @@ void GameController::Update()
         popup->NextMessage();
     }
     // Freeze physics
-    GetService<PhysicsWorld>()->SetFrozen(popup->IsShown());
+    GetService<PhysicsWorld>()->SetFrozen(popup->IsShown() || isGameOver);
     mouseWasPressed = mouse->LeftPressed();
+    if (doRestart)
+    {
+        HideGameOver();
+        if (SceneWorld == nullptr)
+        {
+            for (auto itr : GetService<ResourceController>()->GetAll<Scene>())
+            {
+                Scene* scene = (Scene*)itr.second;
+                if (scene != SceneMenu && scene != SceneUI)
+                {
+                    SceneWorld = scene;
+                    break;
+                }
+            }
+        }
+        SceneWorld->LoadSafe(SceneWorld->GetFilePath());
+        doRestart = false;
+    }
 }
 
-void GameController::GameOver()
+void GameController::GameOver(bool win)
 {
     isGameOver = true;
-    gameOverText->text = "Game Over! You were spotted.";
+    gameOverText->text = win ? "Your ghost friends got you to safety!" : "Game Over! You were spotted.";
+    gameOverText->layout.mainColor = win ? Ossium::Colors::GREEN : Ossium::Colors::RED;
     gameOverText->boxed = true;
     gameOverText->dirty = true;
     if (gui != nullptr)
     {
         gui->SetActive(true);
-        if (restartLevelButton->sprite != nullptr)
+        if (!win && restartLevelButton->sprite != nullptr)
         {
             restartLevelButton->sprite->SetRenderWidth(1);
             restartLevelButton->GetEntity()->GetComponentInChildren<Text>()->text = "Retry";
@@ -127,15 +149,23 @@ void GameController::GameOver()
     }
 }
 
-/// TODO
 void GameController::RestartLevel()
 {
-    if (worldScene != nullptr)
-    {
-        // Reload the world
-        //worldScene->LoadSafe(worldScene->GetPath());
-    }
     HideGameOver();
+    if (SceneWorld == nullptr)
+    {
+        for (auto itr : GetService<ResourceController>()->GetAll<Scene>())
+        {
+            Scene* scene = (Scene*)itr.second;
+            if (scene != SceneMenu && scene != SceneUI)
+            {
+                SceneWorld = scene;
+                break;
+            }
+        }
+    }
+    SceneWorld->LoadSafe(SceneWorld->GetFilePath());
+    doRestart = true;
 }
 
 void GameController::HideGameOver()
@@ -162,13 +192,26 @@ void GameController::HideGameOver()
     }
 }
 
-/// TODO
 void GameController::QuitToMainMenu()
 {
-    if (worldScene != nullptr)
+    HideGameOver();
+    if (SceneWorld == nullptr)
     {
-        // This should be safe...? Guess I'll find out if not soon enough :P
-        //GetService<ResourceController>()->Free<Scene>(worldScene->GetPath());
+        for (auto itr : GetService<ResourceController>()->GetAll<Scene>())
+        {
+            Scene* scene = (Scene*)itr.second;
+            if (scene != SceneMenu && scene != SceneUI)
+            {
+                SceneWorld = scene;
+                break;
+            }
+        }
     }
-    entity->GetScene()->LoadSafe("assets/scenes/MainMenu.rawr");
+    SceneWorld->ClearSafe();
+    if (SceneMenu == nullptr)
+    {
+        SceneMenu = GetService<ResourceController>()->Get<Scene>("assets/scenes/MainMenu.rawr", entity->GetScene()->GetServices());
+    }
+    SceneUI->ClearSafe();
+    SceneMenu->LoadSafe("assets/scenes/MainMenu.rawr");
 }
