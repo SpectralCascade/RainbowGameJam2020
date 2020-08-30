@@ -89,7 +89,7 @@ void Ghost::CircleTarget(Vector2 target, Vector2 idealRange)
         if (ghost->body != nullptr)
         {
             Vector2 diffToGhost = ghost->body->GetTransform()->GetWorldPosition() - GetTransform()->GetWorldPosition();
-            if (diffToGhost.Length() < 50)
+            if (diffToGhost.Length() < 30)
             {
                 // Move away from the ghost
                 force += diffToGhost.Normalized() * -moveForce * 0.2f;

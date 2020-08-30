@@ -31,7 +31,7 @@ struct GuardSchema : public Schema<GuardSchema, 10>
     M(Vector2, direction) = {0, -1};
     M(float, fov) = 135.0f;
     // Rate at which the 'alert' timer cools down each frame, in milliseconds
-    M(Uint32, searchTime) = 10;
+    M(Uint32, searchTime) = 4000;
     // How long it takes before the guard is alerted and it's game over.
     M(Uint32, alertTime) = 500;
 

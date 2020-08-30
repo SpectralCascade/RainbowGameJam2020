@@ -118,12 +118,6 @@ void Guard::Update()
             {
                 state = GUARD_IDLE;
             }
-            if (aiText != nullptr)
-            {
-                aiText->text = " ";
-                aiText->layout.mainColor = Colors::TRANSPARENT;
-                aiText->dirty = true;
-            }
             alertLevel = 0;
             alertClock.SetPaused(true);
         }
@@ -142,7 +136,7 @@ void Guard::Update()
         {
             // Can no longer see player, start searching
             alertStartTime = alertClock.GetTime();
-            state = targetWaypoint != nullptr ? GUARD_PATROL : GUARD_IDLE;
+            state = GUARD_IDLE;
             if (aiText != nullptr && aiText->text != "?")
             {
                 aiText->text = "?";
@@ -162,7 +156,7 @@ void Guard::Update()
                     Scene* scene = (Scene*)itr.second;
                     if (scene != entity->GetScene())
                     {
-                        Entity* found = scene->Find("GameController");
+                        Entity* found = scene->Find("GUI");
                         if (found != nullptr)
                         {
                             found->GetComponent<GameController>()->GameOver();
@@ -187,6 +181,13 @@ void Guard::Update()
         if (alertBarBackground != nullptr)
         {
             alertBarBackground->SetRenderWidth(alertLevel > 0.0f ? 1.0f : 0.0f);
+        }
+
+        if (aiText != nullptr && alertLevel <= 0.0f)
+        {
+            aiText->text = " ";
+            aiText->layout.mainColor = Colors::TRANSPARENT;
+            aiText->dirty = true;
         }
     }
 

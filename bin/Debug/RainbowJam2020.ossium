@@ -1,14 +1,19 @@
 {
     "name" : "RainbowJam2020",
     "openScenes" : [{
-    "opened" : 1,
-    "loaded" : 1,
-    "path" : "C:\Users\2013b\Git\RainbowGameJam2020\bin\Debug\assets\scenes\level_1.rawr",
-    "name" : "level_1"
-}, {
     "opened" : 0,
     "loaded" : 0,
     "path" : "C:\Users\2013b\Git\RainbowGameJam2020\bin\Debug\assets\scenes\UI.rawr",
     "name" : "UI"
+}, {
+    "opened" : 0,
+    "loaded" : 1,
+    "path" : "C:\Users\2013b\Git\RainbowGameJam2020\bin\Debug\assets\scenes\hub.rawr",
+    "name" : "hub"
+}, {
+    "opened" : 1,
+    "loaded" : 1,
+    "path" : "C:\Users\2013b\Git\RainbowGameJam2020\bin\Debug\assets\scenes\exit.rawr",
+    "name" : "exit"
 }]
 }

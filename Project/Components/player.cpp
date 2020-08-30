@@ -20,6 +20,25 @@ void Player::OnLoadFinish()
     physicsBody = entity->AddComponentOnce<PhysicsBody>();
     //entity->AddComponentOnce<CircleCollider>();
     playerImage = entity->AddComponentOnce<Texture>();
+
+#ifndef OSSIUM_EDITOR
+    Entity* found = nullptr;
+    for (auto itr : GetService<ResourceController>()->GetAll<Scene>())
+    {
+        found = itr.second->Find("GUI");
+        if (found != nullptr)
+        {
+            GameController* gc = found->GetComponent<GameController>();
+            if (gc != nullptr)
+            {
+                // Setup player ghosts
+                // TODO
+            }
+            break;
+        }
+    }
+#endif // OSSIUM_EDITOR
+
 }
 
 void Player::OnDestroy()

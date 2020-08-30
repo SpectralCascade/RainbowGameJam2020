@@ -913,7 +913,7 @@
 1598726778 c:\users\2013b\git\rainbowgamejam2020\project\components\gamecontroller.h
 	<Ossium.h>
 
-1598619062 source:c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.cpp
+1598792917 source:c:\users\2013b\git\rainbowgamejam2020\project\components\ghost.cpp
 	"ghost.h"
 	"guard.h"
 
@@ -967,7 +967,7 @@
 1598790818 c:\users\2013b\git\rainbowgamejam2020\project\components\guard.h
 	<Ossium.h>
 
-1598719613 source:c:\users\2013b\git\rainbowgamejam2020\project\components\guard.cpp
+1598791623 source:c:\users\2013b\git\rainbowgamejam2020\project\components\guard.cpp
 	"guard.h"
 	"guardwaypoint.h"
 	"player.h"
